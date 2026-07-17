@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Local Handyman Services - Martin Smith (Bradford)</title>
+    <meta name="description" content="Professional, reliable, and affordable handyman services in Bradford and surrounding areas. No job too big or too small!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0b111e;
+            --bg-accent: #0f182c;
+            --accent-yellow: #ffc300;
+            --accent-yellow-hover: #e0ab00;
+            --accent-blue: #0056b3;
+            --accent-blue-light: #1e88e5;
+            --accent-green: #00c897;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --card-bg: rgba(20, 30, 55, 0.6);
+            --card-border: rgba(255, 255, 255, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(30, 136, 229, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(255, 195, 0, 0.1) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(0, 200, 151, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Top Nav Bar */
+        .top-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .back-btn:hover {
+            color: var(--accent-yellow);
+            background: rgba(255, 195, 0, 0.08);
+            border-color: rgba(255, 195, 0, 0.2);
+            transform: translateX(-4px);
+        }
+
+        .back-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--accent-yellow);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 6.5rem;
+            line-height: 0.9;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .hero-title span {
+            color: var(--accent-yellow);
+        }
+
+        .hero-byline {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--text-light);
+            letter-spacing: 0.05em;
+            margin-top: -0.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .hero-banner-ribbon {
+            background: var(--accent-blue-light);
+            color: #fff;
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            padding: 0.4rem 2rem;
+            transform: rotate(-2deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            margin-bottom: 2.5rem;
+            border: 2px solid #fff;
+            display: inline-block;
+            letter-spacing: 0.05em;
+        }
+
+        /* Call To Action Buttons in Hero */
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1.1rem 2.2rem;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            gap: 0.75rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+
+        .btn-yellow {
+            background: var(--accent-yellow);
+            color: #0b111e;
+        }
+
+        .btn-yellow:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 195, 0, 0.4);
+        }
+
+        .btn-facebook {
+            background: #1877f2;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-facebook:hover {
+            background: #166fe5;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+        }
+
+        .btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* Hero Image */
+        .hero-handyman-image {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-handyman-image:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-location-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 195, 0, 0.1);
+            border: 1px solid rgba(255, 195, 0, 0.25);
+            color: var(--accent-yellow);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Grid Section */
+        .services-section {
+            margin-bottom: 5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .section-title-bg {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: #fff;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 10%;
+            width: 80%;
+            height: 5px;
+            background: var(--accent-yellow);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.25rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 195, 0, 0.3);
+            box-shadow: 
+                0 20px 45px rgba(0, 0, 0, 0.35),
+                0 0 30px rgba(255, 195, 0, 0.08);
+            background: rgba(20, 30, 55, 0.85);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-yellow);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon-box {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: rgba(255, 195, 0, 0.1);
+            border: 1px solid rgba(255, 195, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-yellow);
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon-box {
+            background: var(--accent-yellow);
+            color: #0b111e;
+            transform: scale(1.1);
+        }
+
+        .service-icon-box svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            letter-spacing: 0.03em;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .service-card:hover .service-title {
+            color: var(--accent-yellow);
+        }
+
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            flex-grow: 1;
+        }
+
+        .service-list li {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .service-list li::before {
+            content: '•';
+            color: var(--accent-yellow);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0.2rem;
+            top: -0.2rem;
+        }
+
+        /* Banner Box (Bottom Middle Promo) */
+        .bottom-banner {
+            background: radial-gradient(circle at 100% 0%, var(--bg-accent) 0%, #0d1627 100%);
+            border: 2px dashed rgba(255, 195, 0, 0.4);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .bottom-banner h3 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+        }
+
+        .bottom-banner p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .quote-badge {
+            display: inline-block;
+            background: rgba(0, 200, 151, 0.1);
+            color: var(--accent-green);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 1px solid rgba(0, 200, 151, 0.25);
+            font-size: 0.95rem;
+        }
+
+        /* Footer CTA Bar (Yellow & Black Strip) */
+        .contact-cta-bar {
+            background: var(--accent-yellow);
+            color: #0b111e;
+            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            margin-bottom: 3rem;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            border: 4px solid #fff;
+        }
+
+        .cta-info h4 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.03em;
+        }
+
+        .cta-info p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(11, 17, 30, 0.8);
+        }
+
+        .cta-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .phone-link {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: #0b111e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            line-height: 1;
+        }
+
+        .phone-link:hover {
+            color: var(--accent-blue);
+            transform: scale(1.05);
+        }
+
+        .phone-link svg {
+            width: 38px;
+            height: 38px;
+            fill: currentColor;
+        }
+
+        .cta-fb-btn {
+            background: var(--accent-blue);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .cta-fb-btn:hover {
+            background: #004494;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Site Footer */
+        .site-footer {
+            background: #060a12;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-banner-text {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--accent-yellow);
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .site-footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: rotate(8deg) scale(1); }
+            100% { transform: rotate(6deg) scale(1.05); }
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+            .hero-text {
+                align-items: center;
+            }
+            .hero-title {
+                font-size: 5rem;
+            }
+            .hero-badge-container {
+                justify-content: center;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-handyman-image {
+                order: -1;
+                max-width: 360px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-cta-bar {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .cta-links {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .phone-link {
+                font-size: 2.2rem;
+            }
+            .bottom-banner {
+                padding: 2rem 1.5rem;
+            }
+            .bottom-banner h3 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 3.8rem;
+            }
+            .hero-banner-ribbon {
+                font-size: 1.5rem;
+                padding: 0.4rem 1.2rem;
+            }
+            .phone-link {
+                font-size: 1.8rem;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <div class="top-nav">
+        <a href="/index.html" class="back-btn" id="btn-back-to-hub">
+            <svg viewBox="0 0 24 24">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Web Demos
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-text">
+                <div class="hero-subtitle">YOUR LOCAL</div>
+                <h1 class="hero-title">HANDYMAN<br><span>SERVICES!</span></h1>
+                <div class="hero-byline">BY MARTIN SMITH</div>
+                <div class="hero-location-badge">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    BRADFORD BASED &amp; SURROUNDING AREAS
+                </div>
+                <div class="hero-banner-ribbon">NO JOB TOO BIG OR TOO SMALL!</div>
+                
+                <div class="hero-actions">
+                    <a href="tel:07783568839" class="btn btn-yellow" id="hero-btn-call">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Call / Text Me Today
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="btn btn-facebook" id="hero-btn-fb">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                        Message on Facebook
+                    </a>
+                </div>
+            </div>
+
+            <img src="./handyman_character.png" alt="Martin Smith - Bradford Handyman" class="hero-handyman-image">
+        </header>
+
+        <!-- Services Section ("STUFF I DO...") -->
+        <section class="services-section">
+            <div class="section-header">
+                <h2 class="section-title-bg">Stuff I Do...</h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Flat Pack Builds -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon-box">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Flat Pack Builds</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Such as wardrobes, beds, dressing tables, bedside cabinets etc.</li>
+                        <li>Furniture assembly &amp; disassembly for moving if required.</li>
+                    </ul>
+                </div>
+
+                <!-- Prep Work & Decorating -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon-box">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22V12"></path>
+                                <path d="M17 12H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Prep Work &amp; Decorating</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Prep work carried out such as sanding, filling and stripping wallpaper</li>
+                        <li>Painting &amp; wallpapering</li>
+                        <li>Exterior &amp; interior painting</li>
+                        <li>Garden fence painting / touching up</li>
+                    </ul>
+                </div>
+
+                <!-- Household DIY / Repairs -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon-box">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Household DIY &amp; Repairs</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Fitting TV mounts, curtain rails / poles / tie backs and whatever else is needed around the house</li>
+                        <li>Such as adjusting cupboard doors, changing light bulbs (if you struggle with heights) and odd jobs</li>
+                        <li>If it's not on the list, just ask!</li>
+                    </ul>
+                </div>
+
+                <!-- Hanging Mirrors & Pictures -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon-box">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Hanging Mirrors &amp; Pictures</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Neatly and securely hung on all wall types.</li>
+                        <li>Precise laser alignment for straight frames.</li>
+                    </ul>
+                </div>
+
+                <!-- Garden Maintenance -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon-box">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2a15 15 0 0 1 12 15H0A15 15 0 0 1 12 2z"></path>
+                                <path d="M12 17v5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Garden Maintenance</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>All year round, keeping your garden clean and maintained.</li>
+                        <li>Trimming bushes, hedges and grass</li>
+                        <li>Weeding</li>
+                        <li>Jet washing driveways and patios also available</li>
+                    </ul>
+                </div>
+
+                <!-- Fencing / Landscaping / Demolition -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon-box">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="3" x2="9" y2="21"></line>
+                                <line x1="15" y1="3" x2="15" y2="21"></line>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="3" y1="15" x2="21" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Fencing &amp; Landscaping</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Fencing, landscaping, minor building, and light demolition.</li>
+                        <li>All work carried out efficiently.</li>
+                        <li>No job too big or too small – don't hesitate to call!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Signpost Banner -->
+        <section class="bottom-banner">
+            <h3>ALL WORK CARRIED OUT</h3>
+            <p>No job is too big, and no job is too small. I treat every home with complete care and respect.</p>
+            <div class="quote-badge">
+                Feel free to get in touch for a FREE QUOTE with no obligation.
+            </div>
+        </section>
+
+        <!-- Contact Strip -->
+        <section class="contact-cta-bar">
+            <div class="cta-info">
+                <h4>CONTACT ME TODAY!</h4>
+                <p>Call, text or message - I'm happy to help!</p>
+            </div>
+            <div class="cta-links">
+                <a href="tel:07783568839" class="phone-link" id="bar-phone-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    07783568839
+                </a>
+                <a href="https://facebook.com" target="_blank" class="cta-fb-btn" id="bar-fb-btn">
+                    <svg viewBox="0 0 24 24" style="width:20px;height:20px;">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                    Message on Facebook
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-banner-text">YOU NAME IT, I'LL DO IT!</div>
+        <p>&copy; 2026 Martin Smith Handyman Services. Serving Bradford &amp; Surrounding Areas.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.5;">Reliable • Friendly • Professional • Affordable</p>
+    </footer>
+
+</body>
+</html>
