@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outdoor Restorations - Professional Cleaning & Repairs</title>
+    <meta name="description" content="Professional outdoor cleaning and repair services. Specialized in patio restoration, jet washing, decking care, and general repairs. Book today!">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --light-bg: #f8fafc;
+            --accent-green: #15803d; /* Fresh grass green */
+            --accent-green-light: #22c55e;
+            --accent-black: #111111; /* Clean black */
+            --accent-black-muted: #1e1e1e;
+            --text-dark: #1f2937;
+            --text-muted: #64748b;
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--primary-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            color: var(--accent-black);
+            font-weight: 700;
+        }
+
+        /* Custom Buttons */
+        .btn-green {
+            background-color: var(--accent-green);
+            color: var(--primary-white);
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 0.75rem 1.75rem;
+            border: 2px solid var(--accent-green);
+            transition: all 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background-color: var(--accent-black);
+            border-color: var(--accent-black);
+            color: var(--primary-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-black-outline {
+            background-color: transparent;
+            color: var(--accent-black);
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 0.75rem 1.75rem;
+            border: 2px solid var(--accent-black);
+            transition: all 0.3s ease;
+        }
+
+        .btn-black-outline:hover {
+            background-color: var(--accent-black);
+            color: var(--primary-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-green-outline {
+            background-color: transparent;
+            color: var(--accent-green);
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 0.75rem 1.75rem;
+            border: 2px solid var(--accent-green);
+            transition: all 0.3s ease;
+        }
+
+        .btn-green-outline:hover {
+            background-color: var(--accent-green);
+            color: var(--primary-white);
+            transform: translateY(-2px);
+        }
+
+        /* Navbar Customization */
+        .custom-navbar {
+            background-color: var(--primary-white);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .navbar-brand img {
+            max-height: 55px;
+            border-radius: 4px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--accent-black) !important;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-green) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f4fbf7 100%);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            color: var(--accent-green);
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 8px solid var(--primary-white);
+        }
+
+        /* Features Section */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--primary-white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: rgba(21, 128, 61, 0.1);
+            color: var(--accent-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.15rem;
+            font-weight: 700;
+        }
+
+        /* Services Cards */
+        .service-card {
+            background-color: var(--primary-white);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 2.25rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-green-light);
+            box-shadow: 0 20px 40px rgba(21, 128, 61, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background-color: var(--accent-black);
+            color: var(--accent-green-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background-color: var(--accent-green);
+            color: var(--primary-white);
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .service-list-items {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            margin-top: 1rem;
+        }
+
+        .service-list-items li {
+            padding-left: 1.25rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .service-list-items li::before {
+            content: "\F272"; /* Bootstrap Icon code for check-circle */
+            font-family: "bootstrap-icons";
+            color: var(--accent-green);
+            position: absolute;
+            left: 0;
+            top: 0.05rem;
+        }
+
+        /* Booking Section */
+        .booking-section {
+            background-color: var(--light-bg);
+            border-top: 1px solid rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            padding: 6rem 0;
+        }
+
+        .booking-form-card {
+            background-color: var(--primary-white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .form-control, .form-select {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.12);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 0.25rem rgba(21, 128, 61, 0.15);
+        }
+
+        /* Info Block */
+        .contact-info-card {
+            background-color: var(--accent-black);
+            color: var(--primary-white);
+            border-radius: 20px;
+            padding: 3rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info-card h3 {
+            color: var(--primary-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-link {
+            color: var(--primary-white);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: color 0.2s ease;
+        }
+
+        .info-link:hover {
+            color: var(--accent-green-light);
+        }
+
+        .info-link i {
+            color: var(--accent-green-light);
+            font-size: 1.5rem;
+        }
+
+        /* Call To Action Strip */
+        .cta-banner {
+            background-color: var(--accent-green);
+            color: var(--primary-white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            color: var(--primary-white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--accent-black);
+            color: var(--primary-white);
+            padding: 4rem 0 2rem;
+        }
+
+        .site-footer a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .site-footer a:hover {
+            color: var(--accent-green-light);
+        }
+
+        .footer-logo {
+            max-height: 50px;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.jpg" alt="Outdoor Restorations Logo" class="me-2">
+                <span class="d-none d-sm-inline fw-bold fs-4 text-dark font-display">Outdoor Restorations</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#booking">Book Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="tel:07379606770" class="btn btn-green-outline d-none d-md-inline-flex align-items-center gap-2" id="nav-btn-call">
+                        <i class="bi bi-telephone-fill"></i> Call 07379 606770
+                    </a>
+                    <a href="../index.html" class="btn btn-black-outline btn-sm" id="nav-btn-back-hub">Hub Portal</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold mb-3">
+                        <i class="bi bi-check-circle-fill me-1"></i> Exterior Cleaning &amp; Restoration Specialists
+                    </div>
+                    <h1 class="hero-title text-dark">Restore Your Outdoor Spaces to <span>Perfection</span></h1>
+                    <p class="hero-desc">
+                        Professional, deep pressure washing, jet cleaning, and repair solutions. We bring life back to dirty patios, moss-covered driveways, weathered decking, and exterior walls. Serving our local community with absolute premium care.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#booking" class="btn btn-green shadow-sm" id="hero-btn-book">Book a Service</a>
+                        <a href="#services" class="btn btn-black-outline" id="hero-btn-services">Our Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="patio_restoration_hero.png" alt="Patio Pressure Wash Restoration" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="py-5 bg-light border-bottom border-top">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <h3 class="feature-title">Fully Insured Work</h3>
+                            <p class="text-muted small mb-0">Peace of mind guaranteed on all properties.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <i class="bi bi-water"></i>
+                        </div>
+                        <div>
+                            <h3 class="feature-title">Premium Jet Wash Gear</h3>
+                            <p class="text-muted small mb-0">Commercial grade machines for stellar results.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <i class="bi bi-patch-check"></i>
+                        </div>
+                        <div>
+                            <h3 class="feature-title">Free Inspection Quotes</h3>
+                            <p class="text-muted small mb-0">Transparent pricing with no surprise costs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 my-5" id="services">
+        <div class="container">
+            <div class="text-center mb-5 max-width-600 mx-auto">
+                <h2 class="fs-1">Outdoor Services We Offer</h2>
+                <p class="text-muted">High-pressure jet washing and repairs tailored to match your specific stone, wood, or brick surfaces.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-droplet-half"></i>
+                        </div>
+                        <h3>Jet Washing &amp; Cleans</h3>
+                        <p class="text-muted">High-impact deep cleaning for strong masonry and hard standing structures.</p>
+                        <ul class="service-list-items">
+                            <li>Concrete driveways &amp; paths</li>
+                            <li>Tarmac deep sweeps</li>
+                            <li>Brickwork &amp; garden walls</li>
+                            <li>Moss, algae &amp; weed removal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-grid-3x3-gap"></i>
+                        </div>
+                        <h3>Patio &amp; Stone Restoration</h3>
+                        <p class="text-muted">Careful scrubbing, re-sanding, and sealing to return stone to brand-new condition.</p>
+                        <ul class="service-list-items">
+                            <li>Indian sandstone specialists</li>
+                            <li>Jointing mortar repairs</li>
+                            <li>Block paving re-sanding</li>
+                            <li>Premium clear-coat sealing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h3>Decking Maintenance</h3>
+                        <p class="text-muted">Slippery algae removal, board cleaning, staining, and protective treatments.</p>
+                        <ul class="service-list-items">
+                            <li>Anti-slip deep washes</li>
+                            <li>Premium protective staining</li>
+                            <li>Board &amp; screw tightenings</li>
+                            <li>Sanding and refinishing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-arrow-down-circle"></i>
+                        </div>
+                        <h3>Gutter &amp; Fascia Cleans</h3>
+                        <p class="text-muted">Removal of blockages and leaves to avoid water damage and staining.</p>
+                        <ul class="service-list-items">
+                            <li>Debris vacuum clearance</li>
+                            <li>Downpipe flush validation</li>
+                            <li>Fascia &amp; soffit washing</li>
+                            <li>Minor joint leak fixes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-wrench"></i>
+                        </div>
+                        <h3>Fencing &amp; Masonry Repair</h3>
+                        <p class="text-muted">General maintenance, panel replacement, re-pointing, and minor timber tasks.</p>
+                        <ul class="service-list-items">
+                            <li>Fence panel replacements</li>
+                            <li>Timber post reinforcement</li>
+                            <li>Brick pointing repairs</li>
+                            <li>Gate alignment &amp; latch updates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h3>Commercial Cleans</h3>
+                        <p class="text-muted">Scheduled maintenance and deep power-washing for commercial assets.</p>
+                        <ul class="service-list-items">
+                            <li>Storefront facade washes</li>
+                            <li>Car park oil-stain clearance</li>
+                            <li>School courtyard deep cleans</li>
+                            <li>Public stairways &amp; walkways</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to transform your outdoors?</h2>
+            <p class="lead mb-4">Contact us now for a free evaluation and professional service estimate.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="tel:07379606770" class="btn btn-light btn-lg fw-bold text-dark px-4" id="cta-btn-call"><i class="bi bi-telephone-fill me-1"></i> Call 07379 606770</a>
+                <a href="#booking" class="btn btn-outline-light btn-lg fw-bold px-4" id="cta-btn-book">Online Booking request</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Contact Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Booking Form Column -->
+                <div class="col-lg-7">
+                    <div class="booking-form-card">
+                        <h2 class="mb-2">Book a Service</h2>
+                        <p class="text-muted mb-4">Submit your preferred date and selected service below. We will reach back to confirm details and provide an estimate.</p>
+                        
+                        <form id="serviceBookingForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="bookingName" class="form-label fw-bold">Full Name</label>
+                                    <input type="text" class="form-control" id="bookingName" placeholder="John Doe" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="bookingPhone" class="form-label fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control" id="bookingPhone" placeholder="07123 456789" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="bookingEmail" class="form-label fw-bold">Email Address</label>
+                                    <input type="email" class="form-control" id="bookingEmail" placeholder="name@example.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="bookingService" class="form-label fw-bold">Preferred Service</label>
+                                    <select class="form-select" id="bookingService" required>
+                                        <option value="" disabled selected>Select a Service</option>
+                                        <option value="jet-washing">Jet Washing &amp; Pressure Cleans</option>
+                                        <option value="patio-restoration">Patio &amp; Stone Restoration</option>
+                                        <option value="decking-care">Decking Maintenance</option>
+                                        <option value="gutter-cleaning">Gutter &amp; Fascia Cleans</option>
+                                        <option value="fencing-repair">Fencing &amp; Masonry Repair</option>
+                                        <option value="commercial-cleaning">Commercial Outdoor Cleans</option>
+                                        <option value="other">Other / Custom Repair</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="bookingDate" class="form-label fw-bold">Preferred Start Date</label>
+                                    <input type="date" class="form-control" id="bookingDate" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="bookingMessage" class="form-label fw-bold">Additional Details / Message</label>
+                                    <textarea class="form-control" id="bookingMessage" rows="4" placeholder="Describe the size of the area, stone type, or any repairs needed..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-green w-100" id="booking-submit-btn">Send Booking Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Column -->
+                <div class="col-lg-5" id="contact">
+                    <div class="contact-info-card">
+                        <div>
+                            <h3>Contact Us Directly</h3>
+                            <p class="text-white-50 mb-5">Have an emergency repair or need immediate answers? Get in touch with our team via phone or email.</p>
+                            
+                            <div class="d-flex flex-column gap-4">
+                                <div class="d-flex align-items-center gap-3">
+                                    <a href="tel:07379606770" class="info-link" id="contact-info-phone">
+                                        <i class="bi bi-telephone-fill"></i> 07379 606770
+                                    </a>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <a href="mailto:anthony.outdoorrestoration@outlook.com" class="info-link" id="contact-info-email">
+                                        <i class="bi bi-envelope-fill"></i> anthony.outdoorrestoration@outlook.com
+                                    </a>
+                                </div>
+                                <div class="d-flex align-items-start gap-3 mt-2 text-white-50">
+                                    <i class="bi bi-geo-alt-fill text-success fs-5"></i>
+                                    <div>
+                                        <h5 class="text-white mb-1">Local Service Areas</h5>
+                                        <p class="small mb-0">Covering your town and all neighboring surrounding areas. Contact us to see if we visit your postcode!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4 border-top border-secondary mt-5">
+                            <h5 class="text-white mb-2">Our Operating Hours</h5>
+                            <p class="small text-white-50 mb-0">Monday – Saturday: 8:00 AM – 6:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center text-md-start">
+            <div class="row g-4 justify-content-between">
+                <div class="col-md-5">
+                    <img src="logo.jpg" alt="Outdoor Restorations" class="footer-logo">
+                    <p class="text-white-50 small">Premium exterior cleaning, high pressure jet washing, stone sealing, joint repair, decking restoration, and timber fencing repair.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white mb-3">Quick Navigation</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#booking">Book online</a></li>
+                        <li><a href="#contact">Direct Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white mb-3">Customer Support</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="tel:07379606770"><i class="bi bi-telephone me-1"></i> Call 07379 606770</a></li>
+                        <li><a href="mailto:anthony.outdoorrestoration@outlook.com"><i class="bi bi-envelope me-1"></i> Email Inquiry</a></li>
+                        <li><a href="../index.html"><i class="bi bi-grid me-1"></i> Main Demos Hub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="text-white-50 small mb-0">&copy; 2026 Outdoor Restorations. All Rights Reserved.</p>
+                <div class="d-flex gap-3 text-white-50 small">
+                    <span>Premium Accents: Black &amp; Green</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple client-side form validation callback
+        document.getElementById('serviceBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('bookingName').value;
+            const phone = document.getElementById('bookingPhone').value;
+            const service = document.getElementById('bookingService').options[document.getElementById('bookingService').selectedIndex].text;
+            
+            alert(`Thank you, ${name}! Your booking request for "${service}" has been simulated. We will call you at ${phone} to confirm.`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
