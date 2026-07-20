@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&amp;A Outdoor Services | Garden Maintenance &amp; Landscaping in Liversedge</title>
+    <meta name="description" content="C&amp;A Outdoor Services — professional garden maintenance, landscaping and outdoor services in Liversedge and surrounding areas. Call 07535 928482 for a free quote.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Lato:wght@300;400;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ─── Design tokens ──────────────────────────────────────────── */
+        :root {
+            /* Lifted directly from the logo palette */
+            --brown-dark:    #2c1a0e;
+            --brown-mid:     #4a2c15;
+            --brown-light:   #7a5230;
+
+            --green-deep:    #2a5a08;
+            --green-main:    #3d7a10;
+            --green-bright:  #5aa022;
+            --green-light:   #d4edba;
+            --green-pale:    #eef6e4;
+
+            --stone:         #f8f4ee;
+            --stone-mid:     #ede7db;
+            --stone-dark:    #c9b99e;
+
+            --text-dark:     #1c1008;
+            --text-mid:      #4a3520;
+            --text-muted:    #7a6550;
+
+            --border:        #d9cfc0;
+            --surface:       #ffffff;
+
+            --shadow-sm:  0 2px 8px rgba(44,26,14,.08);
+            --shadow-md:  0 6px 24px rgba(44,26,14,.12);
+            --shadow-lg:  0 16px 48px rgba(44,26,14,.16);
+
+            --font-serif:  'Playfair Display', Georgia, serif;
+            --font-body:   'Lato', 'Helvetica Neue', sans-serif;
+            --font-ui:     'Raleway', sans-serif;
+        }
+
+        /* ─── Reset ──────────────────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            background: var(--stone);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        img { display: block; max-width: 100%; }
+        a  { color: inherit; text-decoration: none; }
+
+        /* ─── Utilities ──────────────────────────────────────────────── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section { padding: 5rem 0; }
+        .section-alt { background: var(--stone-mid); }
+        .section-green { background: var(--green-deep); color: #fff; }
+        .section-brown { background: var(--brown-dark); color: #fff; }
+
+        .section-label {
+            font-family: var(--font-ui);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--green-bright);
+            margin-bottom: .65rem;
+        }
+        .section-brown .section-label,
+        .section-green .section-label { color: var(--green-bright); }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 4vw, 2.6rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--brown-dark);
+            margin-bottom: .8rem;
+        }
+        .section-brown .section-title,
+        .section-green .section-title { color: #fff; }
+
+        .section-sub {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 540px;
+            line-height: 1.6;
+        }
+        .section-brown .section-sub,
+        .section-green .section-sub { color: rgba(255,255,255,.72); }
+
+        .section-header { margin-bottom: 3.5rem; }
+        .section-header.centered { text-align: center; }
+        .section-header.centered .section-sub { margin: 0 auto; }
+
+        /* ─── Buttons ────────────────────────────────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            font-size: .92rem;
+            letter-spacing: .04em;
+            padding: .85rem 2rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all .22s ease;
+            white-space: nowrap;
+        }
+        .btn-green {
+            background: var(--green-main);
+            color: #fff;
+            border-color: var(--green-main);
+        }
+        .btn-green:hover {
+            background: var(--green-deep);
+            border-color: var(--green-deep);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-outline-white {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255,255,255,.55);
+        }
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,.12);
+            border-color: #fff;
+        }
+        .btn-brown {
+            background: var(--brown-dark);
+            color: #fff;
+            border-color: var(--brown-dark);
+        }
+        .btn-brown:hover {
+            background: var(--brown-mid);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* ─── Top bar ────────────────────────────────────────────────── */
+        .topbar {
+            background: var(--brown-dark);
+            color: rgba(255,255,255,.72);
+            font-family: var(--font-ui);
+            font-size: .8rem;
+            padding: .55rem 0;
+        }
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .topbar a { color: #fff; font-weight: 600; }
+        .topbar a:hover { text-decoration: underline; }
+        .topbar-left, .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .topbar-item {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+        }
+        .topbar-item svg { width: 13px; height: 13px; opacity: .7; }
+
+        /* ─── Navigation ─────────────────────────────────────────────── */
+        nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: var(--shadow-sm);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+            gap: 1rem;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            flex-shrink: 0;
+        }
+        .nav-logo img {
+            width: 54px;
+            height: 54px;
+            object-fit: contain;
+        }
+        .nav-logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            line-height: 1.2;
+        }
+        .nav-logo-text span {
+            display: block;
+            font-family: var(--font-ui);
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--green-main);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: var(--font-ui);
+            font-size: .88rem;
+            font-weight: 500;
+            color: var(--text-mid);
+            transition: color .2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--green-main);
+            transition: width .2s;
+        }
+        .nav-links a:hover { color: var(--green-deep); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            font-family: var(--font-ui);
+            font-size: .88rem;
+            font-weight: 700;
+            color: var(--green-deep);
+            white-space: nowrap;
+        }
+        .nav-cta:hover { text-decoration: underline; }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--brown-dark);
+            border-radius: 2px;
+            transition: all .25s;
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-mid);
+            padding: .5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .mobile-menu a:last-child { border: none; }
+        .mobile-menu a:hover { color: var(--green-deep); }
+
+        /* ─── Hero ───────────────────────────────────────────────────── */
+        .hero {
+            background:
+                linear-gradient(to bottom, rgba(44,26,14,.72) 0%, rgba(44,26,14,.45) 60%, rgba(44,26,14,.72) 100%),
+                url('hero-bg.jpg') center center / cover no-repeat;
+            background-color: var(--brown-dark);
+            color: #fff;
+            padding: 7rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+        }
+        /* Organic overlay shapes */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            background: var(--stone);
+            clip-path: ellipse(60% 100% at 50% 100%);
+        }
+        .hero .container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: var(--font-ui);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--green-bright);
+            background: rgba(61,122,16,.15);
+            border: 1px solid rgba(90,160,34,.3);
+            padding: .3rem .9rem;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -.02em;
+            margin-bottom: 1rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--green-bright);
+        }
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,.78);
+            margin-bottom: 2.25rem;
+            max-width: 480px;
+            line-height: 1.65;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+        .hero-card {
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.14);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 2rem 1.75rem;
+            text-align: center;
+        }
+        .hero-card-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 1rem;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,.4));
+        }
+        .hero-card-name {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: .2rem;
+        }
+        .hero-card-loc {
+            font-size: .78rem;
+            color: rgba(255,255,255,.55);
+            font-family: var(--font-ui);
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+        .hero-card-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,.12);
+            margin: 1rem 0;
+        }
+        .hero-card-phone {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--green-bright);
+        }
+        .hero-card-phone a { color: inherit; }
+        .hero-card-phone a:hover { text-decoration: underline; }
+        .hero-card-sub {
+            font-size: .75rem;
+            color: rgba(255,255,255,.45);
+            font-family: var(--font-ui);
+            margin-top: .25rem;
+        }
+
+        /* ─── Stats strip ────────────────────────────────────────────── */
+        .stats-strip {
+            background: var(--green-deep);
+            color: #fff;
+            padding: 1.5rem 0;
+        }
+        .stats-strip .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: .5rem 2.5rem;
+            border-right: 1px solid rgba(255,255,255,.2);
+        }
+        .stat-item:last-child { border: none; }
+        .stat-num {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .stat-label {
+            font-family: var(--font-ui);
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.65);
+            margin-top: .25rem;
+        }
+
+        /* ─── About ──────────────────────────────────────────────────── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-img-wrap {
+            position: relative;
+        }
+        .about-logo-display {
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 8px 32px rgba(44,26,14,.18));
+        }
+        .about-badge {
+            position: absolute;
+            bottom: -1rem;
+            right: 0;
+            background: var(--green-main);
+            color: #fff;
+            font-family: var(--font-ui);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .6rem 1.25rem;
+            box-shadow: var(--shadow-md);
+        }
+        .about-text p {
+            color: var(--text-mid);
+            margin-bottom: 1.1rem;
+            font-size: .97rem;
+        }
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.75rem;
+        }
+        .about-value {
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+        }
+        .about-value-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--green-pale);
+            border: 1px solid var(--green-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--green-main);
+        }
+        .about-value-icon svg { width: 18px; height: 18px; }
+        .about-value h4 {
+            font-family: var(--font-ui);
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            margin-bottom: .15rem;
+        }
+        .about-value p {
+            font-size: .82rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* ─── Services ───────────────────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2rem 1.75rem;
+            transition: all .25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--green-main);
+            transition: width .3s ease;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .service-card:hover::after { width: 100%; }
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--green-pale);
+            border: 1px solid var(--green-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.35rem;
+            color: var(--green-deep);
+            transition: all .25s;
+        }
+        .service-card:hover .service-icon {
+            background: var(--green-main);
+            color: #fff;
+        }
+        .service-icon svg { width: 26px; height: 26px; }
+        .service-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            margin-bottom: .6rem;
+        }
+        .service-card p {
+            font-size: .9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ─── Testimonials ───────────────────────────────────────────── */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.75rem;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.12);
+            padding: 2rem;
+            position: relative;
+            transition: transform .25s;
+        }
+        .testimonial-card:hover { transform: translateY(-4px); }
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1;
+            color: var(--green-bright);
+            opacity: .4;
+            margin-bottom: .5rem;
+        }
+        .testimonial-text {
+            font-size: .95rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,.82);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding-top: 1rem;
+        }
+        .testimonial-avatar {
+            width: 42px;
+            height: 42px;
+            background: var(--green-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: #fff;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .testimonial-name {
+            font-family: var(--font-ui);
+            font-weight: 700;
+            font-size: .9rem;
+            color: #fff;
+        }
+        .testimonial-source {
+            font-size: .75rem;
+            color: rgba(255,255,255,.45);
+            margin-top: .1rem;
+        }
+
+        /* ─── FAQ ────────────────────────────────────────────────────── */
+        .faq-list {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            padding: 1.4rem 0;
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 1rem;
+            transition: color .2s;
+        }
+        .faq-question:hover { color: var(--green-deep); }
+        .faq-chevron {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            color: var(--green-main);
+            transition: transform .25s;
+        }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-answer {
+            font-size: .93rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .25s;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            padding-bottom: 1.35rem;
+        }
+
+        /* ─── CTA band ───────────────────────────────────────────────── */
+        .cta-band {
+            background:
+                linear-gradient(135deg, var(--green-deep) 0%, var(--brown-dark) 100%);
+            color: #fff;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .cta-band .container { position: relative; }
+        .cta-band h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 4vw, 2.6rem);
+            font-weight: 800;
+            margin-bottom: .75rem;
+        }
+        .cta-band p {
+            font-size: 1rem;
+            color: rgba(255,255,255,.75);
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+        .cta-phone-number {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-weight: 800;
+            color: var(--green-bright);
+            display: block;
+            margin-bottom: 2rem;
+            letter-spacing: -.02em;
+        }
+        .cta-phone-number a { color: inherit; }
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* ─── Footer ─────────────────────────────────────────────────── */
+        footer {
+            background: var(--brown-dark);
+            color: rgba(255,255,255,.55);
+            padding: 3rem 0 2rem;
+            font-size: .85rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+        }
+        .footer-brand img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1) opacity(.7);
+        }
+        .footer-brand p { font-size: .88rem; line-height: 1.6; }
+        .footer-col h4 {
+            font-family: var(--font-ui);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.4);
+            margin-bottom: 1.1rem;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: .6rem; }
+        .footer-col a { color: rgba(255,255,255,.6); transition: color .2s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: .6rem;
+            margin-bottom: .75rem;
+            color: rgba(255,255,255,.6);
+        }
+        .footer-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; opacity: .6; }
+        .footer-contact-item a { color: rgba(255,255,255,.85); }
+        .footer-contact-item a:hover { color: #fff; }
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,.08);
+            margin-bottom: 1.5rem;
+        }
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .footer-bottom a { color: rgba(255,255,255,.55); }
+        .footer-bottom a:hover { color: #fff; }
+
+        /* ─── Animations ─────────────────────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .anim { animation: fadeUp .65s cubic-bezier(.22,1,.36,1) both; }
+        .d1 { animation-delay: .08s; }
+        .d2 { animation-delay: .18s; }
+        .d3 { animation-delay: .28s; }
+        .d4 { animation-delay: .38s; }
+
+        /* ─── Responsive ─────────────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-img-wrap { max-width: 300px; margin: 0 auto; }
+            .hero .container { grid-template-columns: 1fr; }
+            .hero-card { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 700px) {
+            .nav-links, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .section { padding: 3.5rem 0; }
+            .stat-item { padding: .5rem 1.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-values { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .hero { padding: 4rem 0 5rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .btn { width: 100%; justify-content: center; }
+            .cta-actions { flex-direction: column; }
+            .topbar-right { display: none; }
+            .stats-strip .container { flex-direction: column; gap: .5rem; }
+            .stat-item { border: none; border-bottom: 1px solid rgba(255,255,255,.15); width: 100%; }
+            .stat-item:last-child { border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-left">
+                <div class="topbar-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Liversedge &amp; surrounding areas
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Mon–Sat 8am–6pm
+                </div>
+                <div class="topbar-item">
+                    Call us: <a href="tel:07535928482">07535 928482</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <img src="logo.png" alt="C&A Outdoor Services logo">
+                <div class="nav-logo-text">
+                    C&amp;A Outdoor Services
+                    <span>Liversedge, West Yorkshire</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:07535928482" class="nav-cta" id="nav-call-btn">📞 07535 928482</a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:07535928482" style="color: var(--green-deep); font-weight:700;">📞 07535 928482</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div>
+                <div class="hero-eyebrow anim">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Liversedge · Fully Insured · Free Quotes
+                </div>
+                <h1 class="anim d1">
+                    Your Garden.<br>
+                    <em>Our Passion.</em>
+                </h1>
+                <p class="hero-tagline anim d2">
+                    Professional outdoor maintenance, gardening and landscaping across Liversedge and West Yorkshire. From tidy lawns to complete garden transformations.
+                </p>
+                <div class="hero-actions anim d3">
+                    <a href="tel:07535928482" class="btn btn-green" id="hero-call-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call 07535 928482
+                    </a>
+                    <a href="#services" class="btn btn-outline-white" id="hero-services-btn">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-card anim d2">
+                <img src="logo.png" alt="C&A Outdoor Services" class="hero-card-logo">
+                <div class="hero-card-name">C&amp;A Outdoor Services</div>
+                <div class="hero-card-loc">📍 Liversedge, West Yorkshire</div>
+                <hr class="hero-card-divider">
+                <div class="hero-card-phone">
+                    <a href="tel:07535928482">07535 928482</a>
+                </div>
+                <div class="hero-card-sub">Free quotes · Friendly team</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <div class="stats-strip">
+        <div class="container">
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">5-Star Reviews</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">Free</span>
+                <span class="stat-label">Quotes &amp; Estimates</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">Local</span>
+                <span class="stat-label">Liversedge Based</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">Insured</span>
+                <span class="stat-label">Fully Insured Work</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-sub">From routine maintenance to complete garden makeovers — we handle every aspect of your outdoor space.</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card" id="service-lawn">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 2 2 2c0 5 5 10 10 10zM12 12c0-5 5-10 10-10-2 5-5 8-10 10z"/></svg>
+                    </div>
+                    <h3>Lawn Care &amp; Grass Cutting</h3>
+                    <p>Regular mowing, edging, scarifying and lawn treatments to keep your grass looking lush and healthy all season long.</p>
+                </div>
+
+                <div class="service-card" id="service-garden-maint">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Garden Maintenance</h3>
+                    <p>Weeding, pruning, planting, border tidying and seasonal tidy-ups to keep your garden neat and flourishing year-round.</p>
+                </div>
+
+                <div class="service-card" id="service-landscaping">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    </div>
+                    <h3>Landscaping &amp; Design</h3>
+                    <p>Full garden transformations including new layouts, planting schemes, raised beds, patios and decorative features.</p>
+                </div>
+
+                <div class="service-card" id="service-hedge">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88"/><path d="M14.47 14.48L20 20"/><path d="M8.12 8.12L12 12"/></svg>
+                    </div>
+                    <h3>Hedge &amp; Shrub Trimming</h3>
+                    <p>Precise trimming and shaping of hedges and shrubs to maintain structure, promote healthy growth and improve kerb appeal.</p>
+                </div>
+
+                <div class="service-card" id="service-tree">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 20.18"/><path d="M9.46 11.38C11.56 9.28 13.7 7.5 17 7"/><path d="M17 8l2 2"/><path d="M17 8l-2 2"/></svg>
+                    </div>
+                    <h3>Tree Work &amp; Clearance</h3>
+                    <p>Tree pruning, deadwood removal, stump work and fallen tree clearance carried out safely and professionally.</p>
+                </div>
+
+                <div class="service-card" id="service-clearance">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+                    </div>
+                    <h3>Garden Clearance &amp; Waste</h3>
+                    <p>Full garden clearances, rubbish removal and responsible disposal — perfect for overgrown or neglected outdoor spaces.</p>
+                </div>
+
+                <div class="service-card" id="service-paving">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <h3>Paving &amp; Decking</h3>
+                    <p>Laying and repairing patios, paths, block paving and decking to create beautiful, durable outdoor living areas.</p>
+                </div>
+
+                <div class="service-card" id="service-fencing">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Fencing &amp; Gates</h3>
+                    <p>Supply and installation of fencing panels, posts and gates — plus repairs to existing boundary structures.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrap">
+                    <img src="logo.png" alt="C&A Outdoor Services" class="about-logo-display">
+                    <div class="about-badge">Based in Liversedge</div>
+                </div>
+                <div class="about-text">
+                    <div class="section-label">About Us</div>
+                    <h2 class="section-title">Passionate About<br>Outdoor Spaces</h2>
+                    <p>C&amp;A Outdoor Services is a locally owned and operated business based in Liversedge, West Yorkshire. We take real pride in the work we do — from the smallest garden tidy-up to full-scale landscaping projects.</p>
+                    <p>Our friendly team brings genuine care and professionalism to every job. We turn up when we say we will, we keep you informed throughout, and we always clean up after ourselves. It's that simple.</p>
+                    <p>Whether you need a one-off visit or regular scheduled maintenance, we'll work around you to make your garden exactly what you want it to be.</p>
+                    <div class="about-values">
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div>
+                                <h4>Reliable</h4>
+                                <p>We turn up when we say we will, every time.</p>
+                            </div>
+                        </div>
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div>
+                                <h4>Friendly</h4>
+                                <p>Great communication — you'll always know what's happening.</p>
+                            </div>
+                        </div>
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <div>
+                                <h4>Quality</h4>
+                                <p>High standards on every job — we check you're happy.</p>
+                            </div>
+                        </div>
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div>
+                                <h4>Fair Pricing</h4>
+                                <p>Honest, transparent quotes with no hidden surprises.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-brown" id="testimonials">
+        <div class="container">
+            <div class="section-header centered">
+                <div class="section-label">What Our Customers Say</div>
+                <h2 class="section-title">Real Reviews from Real People</h2>
+                <p class="section-sub">Don't just take our word for it — here's what our happy customers have to say.</p>
+            </div>
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card" id="testimonial-andrew">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">I had a fallen tree needing putting back up and around area tidying up and they have done a great job and cleaned up after themselves.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AR</div>
+                        <div>
+                            <div class="testimonial-name">Andrew Rosindale</div>
+                            <div class="testimonial-source">Facebook Review · 17 July</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" id="testimonial-becci">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Needed some garden maintenance sorting and they've done a fantastic job. Really good communication and managed to fit me in quickly. They came as arranged and just got straight on with the job and tidied up after themselves too. Great lads.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">BB</div>
+                        <div>
+                            <div class="testimonial-name">Becci Brocklehurst</div>
+                            <div class="testimonial-source">Facebook Review · 7 July</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" id="testimonial-rachel">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">I have followed C&amp;A outdoor services for a while now but today was the first time I've had them do any work. They came &amp; gave a quote when they said they would, had a lovely chat with them, I was booked in, they turned up &amp; did the work to the highest standard, they kept checking I was happy with what was done &amp; they cleaned up after themselves perfectly. Lovely guys &amp; very happy with their work, will certainly be using them again.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RJ</div>
+                        <div>
+                            <div class="testimonial-name">Rachel Jowett</div>
+                            <div class="testimonial-source">Facebook Review · 3 July</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header centered">
+                <div class="section-label">Got Questions?</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-sub">Everything you need to know before getting in touch. Can't find your answer? Just give us a call.</p>
+            </div>
+            <div class="faq-list" id="faq-list">
+
+                <div class="faq-item" id="faq-1">
+                    <button class="faq-question" aria-expanded="false">
+                        How do I get a quote?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">Simply give us a call on <strong>07535 928482</strong> and we'll arrange a convenient time to visit, assess your garden and provide a free, no-obligation quote. We aim to get back to all enquiries quickly.</div>
+                </div>
+
+                <div class="faq-item" id="faq-2">
+                    <button class="faq-question" aria-expanded="false">
+                        What areas do you cover?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">We're based in Liversedge and cover the surrounding West Yorkshire area, including Cleckheaton, Heckmondwike, Mirfield, Dewsbury, Batley, Morley and beyond. Not sure if we cover your area? Just call and ask — we're happy to help.</div>
+                </div>
+
+                <div class="faq-item" id="faq-3">
+                    <button class="faq-question" aria-expanded="false">
+                        Do you offer one-off jobs as well as regular maintenance?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">Absolutely! We're completely flexible. Whether you need a one-time garden clearance, a seasonal tidy-up, or an ongoing fortnightly maintenance contract, we'll tailor our service to suit your needs and budget.</div>
+                </div>
+
+                <div class="faq-item" id="faq-4">
+                    <button class="faq-question" aria-expanded="false">
+                        Are you insured?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">Yes — C&amp;A Outdoor Services is fully insured for public liability. You can have complete peace of mind that all work is carried out safely and professionally.</div>
+                </div>
+
+                <div class="faq-item" id="faq-5">
+                    <button class="faq-question" aria-expanded="false">
+                        Do you take away garden waste?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">Yes — we can remove and responsibly dispose of all garden waste generated during our work. We always leave your garden clean and tidy. Just let us know at the time of quoting if this is something you need.</div>
+                </div>
+
+                <div class="faq-item" id="faq-6">
+                    <button class="faq-question" aria-expanded="false">
+                        How quickly can you fit me in?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">We work hard to accommodate our customers as quickly as possible. As our reviews show, we're known for getting jobs booked in promptly. Call us or get in touch and we'll do our best to fit around your schedule.</div>
+                </div>
+
+                <div class="faq-item" id="faq-7">
+                    <button class="faq-question" aria-expanded="false">
+                        What payment methods do you accept?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">We accept cash and bank transfer. Payment is due on completion of the job. We'll always confirm pricing before starting any work so there are no surprises.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Garden?</h2>
+            <p>Get in touch today for a friendly chat and a free, no-obligation quote. We're local, reliable and genuinely love what we do.</p>
+            <span class="cta-phone-number">
+                <a href="tel:07535928482" id="cta-phone-link">07535 928482</a>
+            </span>
+            <div class="cta-actions">
+                <a href="tel:07535928482" class="btn btn-green" id="cta-call-btn" style="font-size:1rem;padding:1rem 2.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call Us Now — Free Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="C&A Outdoor Services">
+                    <p>Professional outdoor maintenance, gardening and landscaping in Liversedge and across West Yorkshire. Friendly, reliable and fully insured.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Lawn Care &amp; Grass Cutting</a></li>
+                        <li><a href="#services">Garden Maintenance</a></li>
+                        <li><a href="#services">Landscaping &amp; Design</a></li>
+                        <li><a href="#services">Hedge Trimming</a></li>
+                        <li><a href="#services">Tree Work &amp; Clearance</a></li>
+                        <li><a href="#services">Paving &amp; Decking</a></li>
+                        <li><a href="#services">Fencing &amp; Gates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span><a href="tel:07535928482" id="footer-phone-link">07535 928482</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Liversedge, West Yorkshire</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>Mon–Sat · 8am–6pm</span>
+                    </div>
+                    <br>
+                    <a href="../index.html" id="footer-hub-link" style="color:rgba(255,255,255,.5);font-size:.8rem;">← Back to Web Demos Hub</a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <span>&copy; 2026 C&amp;A Outdoor Services. All rights reserved.</span>
+                <span>Liversedge, West Yorkshire</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Hamburger menu ─────────────────────────────────────────────
+        const hamburger = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // ── FAQ accordion ──────────────────────────────────────────────
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item.open').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                // Toggle clicked
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ── Scroll-triggered animation ─────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.animationPlayState = 'running';
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.service-card, .testimonial-card, .about-value, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.animation = 'fadeUp .6s cubic-bezier(.22,1,.36,1) forwards paused';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
