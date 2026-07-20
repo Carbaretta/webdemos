@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJH Gardening Maintenance | Birstall, West Yorkshire</title>
+    <meta name="description" content="SJH Gardening Maintenance — professional lawn care, garden maintenance, hedge trimming and landscaping in Birstall, West Yorkshire. Call +44 7368 692769 for a free quote.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ─── Tokens ─────────────────────────────────────────────────── */
+        :root {
+            --forest:      #1e5228;
+            --forest-mid:  #276b35;
+            --green:       #3a8a46;
+            --green-light: #5db36a;
+            --sage:        #7fb88a;
+            --mint:        #e6f4e9;
+            --mint-deep:   #cde8d3;
+            --cream:       #f5fbf6;
+            --white:       #ffffff;
+
+            --text-dark:   #122d19;
+            --text-mid:    #2e5c3a;
+            --text-muted:  #5a7d63;
+
+            --border:      #c4deca;
+
+            --radius-sm:   12px;
+            --radius-md:   20px;
+            --radius-lg:   32px;
+            --radius-xl:   48px;
+            --radius-pill: 999px;
+
+            --shadow-sm:   0 2px 10px rgba(30,82,40,.08);
+            --shadow-md:   0 8px 28px rgba(30,82,40,.13);
+            --shadow-lg:   0 18px 54px rgba(30,82,40,.18);
+
+            --font-serif:  'Cormorant Garamond', Georgia, serif;
+            --font-body:   'Nunito', 'Helvetica Neue', sans-serif;
+        }
+
+        /* ─── Reset ──────────────────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        img { display: block; max-width: 100%; }
+        a  { text-decoration: none; color: inherit; }
+
+        /* ─── Botanical SVG background helper ───────────────────────── */
+        .bg-botanicals {
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-botanicals::before,
+        .bg-botanicals::after {
+            content: '';
+            position: absolute;
+            pointer-events: none;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: .07;
+            z-index: 0;
+        }
+
+        /* ─── Container ──────────────────────────────────────────────── */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .section { padding: 5.5rem 0; }
+        .section-alt { background: var(--mint); }
+        .section-forest { background: var(--forest); color: #fff; }
+
+        /* ─── Typography helpers ─────────────────────────────────────── */
+        .label {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            font-family: var(--font-body);
+            font-size: .73rem;
+            font-weight: 800;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: .75rem;
+        }
+        .label-dot {
+            width: 6px; height: 6px;
+            background: var(--green-light);
+            border-radius: 50%;
+        }
+        .section-forest .label { color: var(--green-light); }
+
+        .h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--forest);
+            margin-bottom: .8rem;
+        }
+        .section-forest .h2 { color: #fff; }
+
+        .sub {
+            font-size: .97rem;
+            color: var(--text-muted);
+            max-width: 520px;
+            line-height: 1.65;
+        }
+        .section-forest .sub { color: rgba(255,255,255,.7); }
+
+        .section-header { margin-bottom: 3.5rem; }
+        .section-header.center { text-align: center; }
+        .section-header.center .sub { margin: 0 auto; }
+
+        /* ─── Buttons ────────────────────────────────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: .92rem;
+            padding: .85rem 2rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            border-radius: var(--radius-pill);
+            transition: all .22s ease;
+            letter-spacing: .02em;
+            white-space: nowrap;
+        }
+        .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+        .btn-green {
+            background: var(--forest);
+            color: #fff;
+            border-color: var(--forest);
+            box-shadow: 0 4px 16px rgba(30,82,40,.25);
+        }
+        .btn-green:hover {
+            background: var(--forest-mid);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(30,82,40,.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255,255,255,.5);
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,.12);
+            border-color: #fff;
+        }
+        .btn-mint {
+            background: var(--mint);
+            color: var(--forest);
+            border-color: var(--mint);
+        }
+        .btn-mint:hover {
+            background: var(--mint-deep);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ─── Top bar ────────────────────────────────────────────────── */
+        .topbar {
+            background: var(--forest);
+            color: rgba(255,255,255,.75);
+            font-size: .8rem;
+            font-weight: 500;
+            padding: .55rem 0;
+        }
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .topbar a { color: #fff; font-weight: 700; }
+        .topbar a:hover { text-decoration: underline; }
+        .topbar-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .topbar-item {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+        }
+        .topbar-item svg { width: 12px; height: 12px; opacity: .65; }
+
+        /* ─── Nav ────────────────────────────────────────────────────── */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 300;
+            box-shadow: var(--shadow-sm);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 78px;
+            gap: 1rem;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+            flex-shrink: 0;
+        }
+        .nav-logo img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        .nav-logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--forest);
+            line-height: 1.2;
+        }
+        .nav-logo-text span {
+            display: block;
+            font-family: var(--font-body);
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--sage);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color .2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: var(--green);
+            border-radius: var(--radius-pill);
+            transition: width .22s;
+        }
+        .nav-links a:hover { color: var(--forest); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta-wrap {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        .nav-cta {
+            font-size: .88rem;
+            font-weight: 700;
+            color: var(--forest);
+        }
+        .nav-cta:hover { text-decoration: underline; }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            background: var(--mint);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 8px;
+        }
+        .hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--forest);
+            border-radius: var(--radius-pill);
+            transition: all .25s;
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            padding: 1.25rem 1.5rem;
+            gap: .25rem;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-weight: 600;
+            font-size: .95rem;
+            color: var(--text-mid);
+            padding: .7rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .mobile-menu a:last-child { border: none; }
+        .mobile-menu a:hover { color: var(--forest); }
+        .mobile-menu a.phone-link { color: var(--forest); font-weight: 800; }
+
+        /* ─── Hero ───────────────────────────────────────────────────── */
+        .hero {
+            background: var(--forest);
+            color: #fff;
+            padding: 6.5rem 0 7rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Decorative plant motifs as inline SVG blobs */
+        .hero-plant-tl, .hero-plant-br,
+        .hero-plant-tr, .hero-plant-bl {
+            position: absolute;
+            pointer-events: none;
+            opacity: .13;
+        }
+        .hero-plant-tl { top: -60px; left: -60px; width: 400px; }
+        .hero-plant-tr { top: -20px; right: -30px; width: 280px; opacity: .09; }
+        .hero-plant-br { bottom: -80px; right: -60px; width: 450px; }
+        .hero-plant-bl { bottom: -40px; left: -20px; width: 220px; opacity: .08; }
+
+        /* Bottom wave */
+        .hero-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0; right: 0;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--green-light);
+            background: rgba(93,179,106,.12);
+            border: 1px solid rgba(93,179,106,.28);
+            padding: .35rem 1rem;
+            border-radius: var(--radius-pill);
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -.01em;
+            margin-bottom: 1rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--green-light);
+        }
+        .hero-sub {
+            font-size: 1.02rem;
+            color: rgba(255,255,255,.75);
+            max-width: 460px;
+            margin-bottom: 2.25rem;
+            line-height: 1.7;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Hero contact card */
+        .hero-card {
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.75rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hero-card-logo {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            margin: 0 auto 1.1rem;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            padding: 6px;
+        }
+        .hero-card-name {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: .2rem;
+        }
+        .hero-card-loc {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.45);
+        }
+        .hero-card-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,.1);
+            margin: 1.1rem 0;
+        }
+        .hero-card-phone {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--green-light);
+        }
+        .hero-card-phone a { color: inherit; }
+        .hero-card-phone a:hover { text-decoration: underline; }
+        .hero-card-note {
+            font-size: .73rem;
+            color: rgba(255,255,255,.4);
+            margin-top: .3rem;
+        }
+
+        /* ─── Trust pills strip ──────────────────────────────────────── */
+        .trust {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 0;
+        }
+        .trust .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .trust-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--mint);
+            border: 1px solid var(--mint-deep);
+            border-radius: var(--radius-pill);
+            padding: .45rem 1.1rem;
+            font-size: .83rem;
+            font-weight: 700;
+            color: var(--forest);
+        }
+        .trust-pill svg { width: 15px; height: 15px; color: var(--green); }
+
+        /* ─── Services ───────────────────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.75rem;
+            transition: all .25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--forest), var(--green-light));
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .3s ease;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--mint-deep); }
+        .service-card:hover::before { transform: scaleX(1); }
+
+        .service-icon {
+            width: 54px; height: 54px;
+            background: var(--mint);
+            border: 2px solid var(--mint-deep);
+            border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.35rem;
+            color: var(--forest);
+            transition: all .25s;
+        }
+        .service-card:hover .service-icon {
+            background: var(--forest);
+            border-color: var(--forest);
+            color: #fff;
+        }
+        .service-icon svg { width: 26px; height: 26px; }
+        .service-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: .5rem;
+        }
+        .service-card p {
+            font-size: .9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ─── About ──────────────────────────────────────────────────── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-logo-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Decorative circle backdrop */
+        .about-logo-wrap::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            aspect-ratio: 1;
+            background: var(--mint);
+            border-radius: 50%;
+            border: 2px dashed var(--mint-deep);
+        }
+        .about-logo-img {
+            width: 260px;
+            height: 260px;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 8px 24px rgba(30,82,40,.18));
+        }
+        .about-badge {
+            position: absolute;
+            bottom: 0; right: 0;
+            background: var(--forest);
+            color: #fff;
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: .55rem 1.25rem;
+            border-radius: var(--radius-pill);
+            box-shadow: var(--shadow-md);
+            z-index: 2;
+        }
+        .about-body p {
+            font-size: .97rem;
+            color: var(--text-mid);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .about-value {
+            background: var(--mint);
+            border: 1px solid var(--mint-deep);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+        }
+        .about-value-icon {
+            width: 32px; height: 32px;
+            background: var(--white);
+            border: 1px solid var(--mint-deep);
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--green);
+            flex-shrink: 0;
+        }
+        .about-value-icon svg { width: 16px; height: 16px; }
+        .about-value h4 {
+            font-size: .88rem;
+            font-weight: 800;
+            color: var(--forest);
+            margin-bottom: .15rem;
+        }
+        .about-value p { font-size: .8rem; color: var(--text-muted); margin: 0; }
+
+        /* ─── Testimonials ───────────────────────────────────────────── */
+        /* Forest-green section with plant motif overlay */
+        .testimonials-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonials-section .plant-motif {
+            position: absolute;
+            pointer-events: none;
+            opacity: .1;
+        }
+        .plant-motif-l { left: -80px; top: 50%; transform: translateY(-50%); width: 300px; }
+        .plant-motif-r { right: -80px; top: 50%; transform: translateY(-50%); width: 300px; transform: translateY(-50%) scaleX(-1); }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: transform .25s, background .25s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,.1);
+        }
+        .t-stars {
+            font-size: .95rem;
+            color: #fbbf24;
+            letter-spacing: 2px;
+            margin-bottom: .75rem;
+        }
+        .t-quote-mark {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            line-height: .8;
+            color: var(--green-light);
+            opacity: .35;
+            margin-bottom: .25rem;
+        }
+        .t-text {
+            font-size: .93rem;
+            font-style: italic;
+            color: rgba(255,255,255,.82);
+            line-height: 1.72;
+            margin-bottom: 1.5rem;
+        }
+        .t-author {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding-top: 1rem;
+        }
+        .t-avatar {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, var(--green), var(--forest));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .t-name { font-weight: 800; font-size: .9rem; color: #fff; }
+        .t-source { font-size: .73rem; color: rgba(255,255,255,.45); margin-top: .1rem; }
+
+        /* ─── Process / Why Us ───────────────────────────────────────── */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -1.5rem;
+            top: 1.5rem;
+            color: var(--mint-deep);
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+        .process-step:last-child::after { display: none; }
+        .process-num {
+            width: 64px; height: 64px;
+            background: var(--mint);
+            border: 2px solid var(--mint-deep);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--forest);
+        }
+        .process-step h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: .45rem;
+        }
+        .process-step p {
+            font-size: .88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ─── FAQ ────────────────────────────────────────────────────── */
+        .faq-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 1.35rem 0;
+            font-family: var(--font-serif);
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--forest);
+            gap: 1rem;
+            transition: color .2s;
+        }
+        .faq-btn:hover { color: var(--green); }
+        .faq-chevron {
+            width: 24px; height: 24px;
+            flex-shrink: 0;
+            color: var(--green);
+            transition: transform .25s;
+            background: var(--mint);
+            border-radius: 50%;
+            padding: 3px;
+        }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-body {
+            font-size: .93rem;
+            color: var(--text-muted);
+            line-height: 1.72;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .25s;
+        }
+        .faq-item.open .faq-body { max-height: 300px; padding-bottom: 1.35rem; }
+
+        /* ─── CTA band ───────────────────────────────────────────────── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 50%, #2d7a40 100%);
+            color: #fff;
+            padding: 5.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Leaf pattern overlay */
+        .cta-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cellipse cx='40' cy='20' rx='14' ry='22' fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.06'/%3E%3Cellipse cx='20' cy='60' rx='10' ry='16' fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.04'/%3E%3Cellipse cx='62' cy='58' rx='12' ry='18' fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+        }
+        .cta-band .container { position: relative; z-index: 1; }
+        .cta-band h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: .75rem;
+        }
+        .cta-band p {
+            font-size: 1rem;
+            color: rgba(255,255,255,.75);
+            max-width: 480px;
+            margin: 0 auto 1.5rem;
+        }
+        .cta-phone {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 6vw, 3.4rem);
+            font-weight: 700;
+            color: var(--green-light);
+            letter-spacing: .01em;
+            display: block;
+            margin-bottom: 2rem;
+        }
+        .cta-phone a { color: inherit; }
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* ─── Footer ─────────────────────────────────────────────────── */
+        footer {
+            background: #122d19;
+            color: rgba(255,255,255,.5);
+            font-size: .85rem;
+        }
+        .footer-top {
+            padding: 3.5rem 0 2.5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr;
+            gap: 3rem;
+        }
+        .footer-brand img {
+            width: 72px; height: 72px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: rgba(255,255,255,.05);
+            padding: 6px;
+            margin-bottom: 1rem;
+        }
+        .footer-brand p { font-size: .88rem; line-height: 1.65; }
+        .footer-col h4 {
+            font-size: .68rem;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.35);
+            margin-bottom: 1.1rem;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: .6rem; }
+        .footer-col a { color: rgba(255,255,255,.6); transition: color .2s; }
+        .footer-col a:hover { color: var(--green-light); }
+        .footer-contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: .55rem;
+            margin-bottom: .75rem;
+            color: rgba(255,255,255,.6);
+        }
+        .footer-contact-row svg { width: 14px; height: 14px; opacity: .6; flex-shrink: 0; margin-top: 3px; }
+        .footer-contact-row a { color: rgba(255,255,255,.85); }
+        .footer-contact-row a:hover { color: var(--green-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.07);
+            padding: 1.5rem 0;
+        }
+        .footer-bottom .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .footer-bottom a { color: rgba(255,255,255,.5); }
+        .footer-bottom a:hover { color: var(--green-light); }
+
+        /* ─── Animations ─────────────────────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(26px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .anim { animation: fadeUp .65s cubic-bezier(.22,1,.36,1) both; }
+        .d1 { animation-delay: .1s; }
+        .d2 { animation-delay: .2s; }
+        .d3 { animation-delay: .32s; }
+
+        /* ─── Responsive ─────────────────────────────────────────────── */
+        @media (max-width: 920px) {
+            .hero .container { grid-template-columns: 1fr; }
+            .hero-card { display: none; }
+            .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-logo-wrap { max-width: 280px; margin: 0 auto; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 700px) {
+            .nav-links, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .section { padding: 3.5rem 0; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-values { grid-template-columns: 1fr; }
+            .topbar-group.right-group { display: none; }
+            .process-step::after { display: none; }
+        }
+        @media (max-width: 480px) {
+            .hero { padding: 4.5rem 0 6rem; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .btn { width: 100%; justify-content: center; }
+            .trust .container { gap: .65rem; }
+            .cta-actions { flex-direction: column; align-items: center; }
+            .cta-phone { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-group">
+                <div class="topbar-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Birstall, West Yorkshire
+                </div>
+            </div>
+            <div class="topbar-group right-group">
+                <div class="topbar-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Mon–Sat · 8am–6pm
+                </div>
+                <div class="topbar-item">
+                    Call: <a href="tel:+447368692769">+44 7368 692769</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav id="main-nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <img src="logo.png" alt="SJH Gardening Maintenance">
+                <div class="nav-logo-text">
+                    SJH Gardening
+                    <span>Maintenance · Birstall</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links-list">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta-wrap">
+                <a href="tel:+447368692769" class="nav-cta" id="nav-call-link">📞 +44 7368 692769</a>
+                <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#services">🌿 Services</a>
+            <a href="#about">🌳 About Us</a>
+            <a href="#testimonials">⭐ Reviews</a>
+            <a href="#faq">❓ FAQ</a>
+            <a href="#contact">📍 Contact</a>
+            <a href="tel:+447368692769" class="phone-link">📞 +44 7368 692769</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <!-- Plant motif SVGs -->
+        <svg class="hero-plant-tl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="white">
+            <path d="M100 280 C100 200 40 160 20 80 C60 120 90 140 100 200 C110 140 140 120 180 80 C160 160 100 200 100 280Z"/>
+            <path d="M60 150 C60 100 20 70 5 20 C35 55 55 75 60 130Z" transform="rotate(-30 60 150)"/>
+            <path d="M140 150 C140 100 180 70 195 20 C165 55 145 75 140 130Z" transform="rotate(30 140 150)"/>
+            <ellipse cx="100" cy="75" rx="18" ry="28" transform="rotate(-15 100 75)"/>
+            <ellipse cx="65" cy="110" rx="14" ry="22" transform="rotate(-35 65 110)"/>
+            <ellipse cx="135" cy="110" rx="14" ry="22" transform="rotate(35 135 110)"/>
+        </svg>
+
+        <svg class="hero-plant-br" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 320" fill="white">
+            <path d="M130 300 C130 220 60 175 30 85 C75 130 115 155 130 220 C145 155 185 130 230 85 C200 175 130 220 130 300Z"/>
+            <ellipse cx="80" cy="130" rx="20" ry="32" transform="rotate(-25 80 130)"/>
+            <ellipse cx="180" cy="130" rx="20" ry="32" transform="rotate(25 180 130)"/>
+            <ellipse cx="130" cy="80" rx="16" ry="26" transform="rotate(0 130 80)"/>
+        </svg>
+
+        <svg class="hero-plant-tr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" fill="white">
+            <ellipse cx="80" cy="60" rx="24" ry="40" transform="rotate(20 80 60)"/>
+            <ellipse cx="40" cy="100" rx="18" ry="30" transform="rotate(-20 40 100)"/>
+            <ellipse cx="120" cy="90" rx="20" ry="32" transform="rotate(40 120 90)"/>
+        </svg>
+
+        <svg class="hero-plant-bl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 180" fill="white">
+            <ellipse cx="65" cy="50" rx="22" ry="36" transform="rotate(-10 65 50)"/>
+            <ellipse cx="30" cy="90" rx="16" ry="26" transform="rotate(-30 30 90)"/>
+            <ellipse cx="100" cy="80" rx="16" ry="26" transform="rotate(30 100 80)"/>
+        </svg>
+
+        <div class="container">
+            <div>
+                <div class="hero-pill anim">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 2 2 2c0 5 5 10 10 10zM12 12c0-5 5-10 10-10-2 5-5 8-10 10z"/></svg>
+                    Birstall · Friendly · Free Quotes
+                </div>
+                <h1 class="anim d1">
+                    Lawns &amp; Gardens<br>
+                    <em>Cared For Properly.</em>
+                </h1>
+                <p class="hero-sub anim d2">
+                    Professional gardening maintenance across Birstall and West Yorkshire. Lawn care, hedge trimming, clearances and more — delivered with a smile.
+                </p>
+                <div class="hero-actions anim d3">
+                    <a href="tel:+447368692769" class="btn btn-green" id="hero-call-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call +44 7368 692769
+                    </a>
+                    <a href="#services" class="btn btn-outline" id="hero-services-btn">See Our Services</a>
+                </div>
+            </div>
+            <div class="hero-card anim d2">
+                <img src="logo.png" alt="SJH Gardening" class="hero-card-logo">
+                <div class="hero-card-name">SJH Gardening Maintenance</div>
+                <div class="hero-card-loc">📍 Birstall, West Yorkshire</div>
+                <hr class="hero-card-divider">
+                <div class="hero-card-phone">
+                    <a href="tel:+447368692769">+44 7368 692769</a>
+                </div>
+                <div class="hero-card-note">Free quotes · No obligation</div>
+            </div>
+        </div>
+
+        <!-- Wave bottom -->
+        <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 1080,0 1440,40 L1440,70 L0,70 Z" fill="#f5fbf6"/>
+        </svg>
+    </section>
+
+    <!-- Trust pills -->
+    <div class="trust">
+        <div class="container">
+            <div class="trust-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Free Quotes
+            </div>
+            <div class="trust-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                One-off &amp; Regular
+            </div>
+            <div class="trust-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                5-Star Rated
+            </div>
+            <div class="trust-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                Friendly &amp; Reliable
+            </div>
+            <div class="trust-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Fully Insured
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="label"><span class="label-dot"></span> What We Do</div>
+                <h2 class="h2">Our Gardening Services</h2>
+                <p class="sub">Whatever your garden needs, we've got you covered. All work is carried out with care and attention to detail.</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card" id="svc-lawn">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 2 2 2c0 5 5 10 10 10zM12 12c0-5 5-10 10-10-2 5-5 8-10 10z"/></svg>
+                    </div>
+                    <h3>Lawn Mowing &amp; Care</h3>
+                    <p>Regular mowing, edging and scarifying to keep your lawn lush, level and healthy throughout the season.</p>
+                </div>
+
+                <div class="service-card" id="svc-hedge">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+                    </div>
+                    <h3>Hedge &amp; Shrub Trimming</h3>
+                    <p>Neat, precise trimming and shaping to improve the look of your hedges and promote healthy, even growth.</p>
+                </div>
+
+                <div class="service-card" id="svc-maintenance">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Garden Maintenance</h3>
+                    <p>Weeding, pruning, planting and border care — everything needed to keep your garden looking its very best.</p>
+                </div>
+
+                <div class="service-card" id="svc-clearance">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6M10 11v6M14 11v6M9 6V4h6v2"/></svg>
+                    </div>
+                    <h3>Garden Clearance</h3>
+                    <p>Full clearances for overgrown or neglected gardens, with responsible removal and disposal of all waste.</p>
+                </div>
+
+                <div class="service-card" id="svc-tree">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 20.18"/><path d="M9.46 11.38C11.56 9.28 13.7 7.5 17 7"/><path d="M17 8l2 2M17 8l-2 2"/></svg>
+                    </div>
+                    <h3>Tree Pruning &amp; Work</h3>
+                    <p>Safe pruning, deadwood removal and fallen tree clearance to keep trees healthy and your garden safe.</p>
+                </div>
+
+                <div class="service-card" id="svc-seasonal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Seasonal Tidy-Ups</h3>
+                    <p>Spring and autumn clear-outs including leaf collection, border prep and planting ready for each new season.</p>
+                </div>
+
+                <div class="service-card" id="svc-planting">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22c1.25-1.25 2.5-2.5 3.75-2.5C7 19.5 7 21 8.25 21S9.5 19.5 10.75 19.5 11 21 12.25 21s1.25-1.5 2.5-1.5 1.25 1.5 2.5 1.5"/><path d="M12 10c0 0 2-2 2-5 0-2-2-3-4-3S6 3 6 5c0 3 2 5 2 5"/><path d="M12 10v12"/></svg>
+                    </div>
+                    <h3>Planting &amp; Borders</h3>
+                    <p>New planting schemes, border redesigns and flower bed preparation to add colour and life to your outdoor space.</p>
+                </div>
+
+                <div class="service-card" id="svc-fencing">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Fencing &amp; Repairs</h3>
+                    <p>Supply and fitting of fencing panels and posts, plus repairs to existing boundary fencing and gates.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-logo-wrap">
+                    <img src="logo.png" alt="SJH Gardening Maintenance" class="about-logo-img">
+                    <div class="about-badge">Based in Birstall, WY</div>
+                </div>
+                <div class="about-body">
+                    <div class="label"><span class="label-dot"></span> About SJH</div>
+                    <h2 class="h2">A Local Business That<br>Truly Cares</h2>
+                    <p>SJH Gardening Maintenance is a locally run business based in Birstall, West Yorkshire. We're passionate about outdoor spaces and take great pride in delivering a genuinely brilliant service to every single customer.</p>
+                    <p>We believe that your garden should be something you love — a space to relax, enjoy and be proud of. That's why we take the time to really listen to what you want and tailor everything we do around you.</p>
+                    <p>Whether it's a quick one-off tidy-up or an ongoing maintenance plan, you'll always get the same friendly, professional attitude and consistently high-quality finish.</p>
+                    <div class="about-values">
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div><h4>Always on Time</h4><p>We show up when agreed, every time.</p></div>
+                        </div>
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                            </div>
+                            <div><h4>Friendly Team</h4><p>Great communication throughout.</p></div>
+                        </div>
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <div><h4>High Standards</h4><p>Attention to detail on every job.</p></div>
+                        </div>
+                        <div class="about-value">
+                            <div class="about-value-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div><h4>Fair Pricing</h4><p>Transparent quotes, no nasty surprises.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header center">
+                <div class="label"><span class="label-dot"></span> Simple Process</div>
+                <h2 class="h2">Getting Started is Easy</h2>
+                <p class="sub">From first contact to a beautiful garden — here's how it works.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-num">1</div>
+                    <h3>Get in Touch</h3>
+                    <p>Give us a call or send a message. We'll have a friendly chat about what you need.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">2</div>
+                    <h3>Free Quote</h3>
+                    <p>We visit your garden, take a look around and give you a clear, no-obligation quote.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">3</div>
+                    <h3>We Get to Work</h3>
+                    <p>Our team arrives on time and delivers a high-quality job, keeping you informed throughout.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">4</div>
+                    <h3>You're Happy</h3>
+                    <p>We make sure you're completely satisfied before we leave — and always tidy up after ourselves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-forest testimonials-section" id="testimonials">
+
+        <!-- Botanical plant motif overlays -->
+        <svg class="plant-motif plant-motif-l" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" fill="white">
+            <path d="M100 380 C100 280 40 230 20 110 C65 165 95 195 100 280 C105 195 135 165 180 110 C160 230 100 280 100 380Z"/>
+            <ellipse cx="55" cy="170" rx="20" ry="34" transform="rotate(-30 55 170)"/>
+            <ellipse cx="145" cy="170" rx="20" ry="34" transform="rotate(30 145 170)"/>
+            <ellipse cx="100" cy="105" rx="16" ry="28"/>
+        </svg>
+        <svg class="plant-motif plant-motif-r" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" fill="white">
+            <path d="M100 380 C100 280 40 230 20 110 C65 165 95 195 100 280 C105 195 135 165 180 110 C160 230 100 280 100 380Z"/>
+            <ellipse cx="55" cy="170" rx="20" ry="34" transform="rotate(-30 55 170)"/>
+            <ellipse cx="145" cy="170" rx="20" ry="34" transform="rotate(30 145 170)"/>
+            <ellipse cx="100" cy="105" rx="16" ry="28"/>
+        </svg>
+
+        <div class="container">
+            <div class="section-header center">
+                <div class="label"><span class="label-dot"></span> Customer Reviews</div>
+                <h2 class="h2">What Our Customers Say</h2>
+                <p class="sub">We're proud to have built a great reputation across Birstall and the wider West Yorkshire area.</p>
+            </div>
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card" id="review-1">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote-mark">"</div>
+                    <p class="t-text">Had SJH come and sort out my overgrown back garden and I couldn't be happier. They were prompt, professional and left the place looking absolutely immaculate. Would recommend without hesitation.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">SM</div>
+                        <div>
+                            <div class="t-name">Sarah M.</div>
+                            <div class="t-source">Google Review · Birstall</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" id="review-2">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote-mark">"</div>
+                    <p class="t-text">Fantastic service from start to finish. Gave a quote quickly, turned up exactly when they said they would and did a brilliant job on the hedges and lawn. Great value too. Will definitely be using them regularly.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">JT</div>
+                        <div>
+                            <div class="t-name">James T.</div>
+                            <div class="t-source">Facebook Review · Heckmondwike</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" id="review-3">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote-mark">"</div>
+                    <p class="t-text">I've tried a few gardening services over the years but SJH are by far the best. They really listen to what you want, the communication is excellent and the results are always spot on. Very happy customer!</p>
+                    <div class="t-author">
+                        <div class="t-avatar">LC</div>
+                        <div>
+                            <div class="t-name">Linda C.</div>
+                            <div class="t-source">Google Review · Batley</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" id="review-4">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote-mark">"</div>
+                    <p class="t-text">Called on a Monday and they were able to fit me in by Wednesday. Cleared out years of overgrowth in one day and tidied everything up perfectly. Neighbours have already been asking for their number!</p>
+                    <div class="t-author">
+                        <div class="t-avatar">PH</div>
+                        <div>
+                            <div class="t-name">Paul H.</div>
+                            <div class="t-source">Facebook Review · Birkenshaw</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" id="review-5">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote-mark">"</div>
+                    <p class="t-text">Really impressed with the quality of work and how friendly and approachable they are. Nothing is too much trouble. My garden looks better than it has in years. Will definitely be booking again.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">KW</div>
+                        <div>
+                            <div class="t-name">Karen W.</div>
+                            <div class="t-source">Google Review · Morley</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" id="review-6">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote-mark">"</div>
+                    <p class="t-text">Honest pricing, great work and they left the garden spotless. Exactly what you want from a gardening service. They even noticed a few extra bits that needed attention and sorted them without being asked.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">RB</div>
+                        <div>
+                            <div class="t-name">Robert B.</div>
+                            <div class="t-source">Facebook Review · Cleckheaton</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+        <div class="container">
+            <div class="section-header center">
+                <div class="label"><span class="label-dot"></span> FAQ</div>
+                <h2 class="h2">Frequently Asked Questions</h2>
+                <p class="sub">Have a question? We've answered the most common ones below. If yours isn't here, just give us a call.</p>
+            </div>
+            <div class="faq-wrap" id="faq-list">
+
+                <div class="faq-item" id="faq-1">
+                    <button class="faq-btn" aria-expanded="false">
+                        How do I get a free quote?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Simply call us on <strong>+44 7368 692769</strong> and we'll arrange a convenient time to visit, assess your garden and provide a completely free, no-obligation quote. We aim to respond to all enquiries quickly.</div>
+                </div>
+
+                <div class="faq-item" id="faq-2">
+                    <button class="faq-btn" aria-expanded="false">
+                        Where do you cover?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">We're based in Birstall and cover surrounding West Yorkshire areas including Batley, Morley, Heckmondwike, Cleckheaton, Birkenshaw, Gomersal, Dewsbury and beyond. Not sure if we cover you? Just ask!</div>
+                </div>
+
+                <div class="faq-item" id="faq-3">
+                    <button class="faq-btn" aria-expanded="false">
+                        Do you do one-off jobs or just regular contracts?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Both! We're completely flexible and happy to take on one-off jobs — such as a seasonal tidy-up or a clearance — as well as regular weekly or fortnightly maintenance visits. It's entirely up to you.</div>
+                </div>
+
+                <div class="faq-item" id="faq-4">
+                    <button class="faq-btn" aria-expanded="false">
+                        Are you insured?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Yes — SJH Gardening Maintenance is fully insured with public liability insurance. You can book with complete confidence that all work is covered and carried out safely and professionally.</div>
+                </div>
+
+                <div class="faq-item" id="faq-5">
+                    <button class="faq-btn" aria-expanded="false">
+                        Do you remove garden waste?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Yes — we can remove and dispose of all garden waste generated during a job. We always leave your garden clean and tidy. Just mention it when you get in touch and we'll include it in your quote.</div>
+                </div>
+
+                <div class="faq-item" id="faq-6">
+                    <button class="faq-btn" aria-expanded="false">
+                        How soon can you start?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">We do our best to be as flexible as possible and fit around your schedule. In many cases we can visit for a quote within a day or two and start work shortly after. Call us and we'll see what we can do.</div>
+                </div>
+
+                <div class="faq-item" id="faq-7">
+                    <button class="faq-btn" aria-expanded="false">
+                        What payment methods do you accept?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">We accept cash and bank transfer. Payment is due on completion of work. We'll always confirm the price before starting so there are absolutely no surprises at the end.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band" id="contact">
+        <div class="container">
+            <h2>Ready for a Beautiful Garden?</h2>
+            <p>Get in touch today for a friendly chat and a completely free, no-obligation quote. We'd love to help.</p>
+            <span class="cta-phone">
+                <a href="tel:+447368692769" id="cta-phone-link">+44 7368 692769</a>
+            </span>
+            <div class="cta-actions">
+                <a href="tel:+447368692769" class="btn btn-mint" id="cta-call-btn" style="font-size:1rem; padding:1rem 2.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call Now — It's Free
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="SJH Gardening Maintenance">
+                        <p>Professional gardening maintenance across Birstall and West Yorkshire. Friendly, reliable and fully insured — your garden is in safe hands.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Lawn Mowing &amp; Care</a></li>
+                            <li><a href="#services">Hedge &amp; Shrub Trimming</a></li>
+                            <li><a href="#services">Garden Maintenance</a></li>
+                            <li><a href="#services">Garden Clearance</a></li>
+                            <li><a href="#services">Tree Pruning</a></li>
+                            <li><a href="#services">Seasonal Tidy-Ups</a></li>
+                            <li><a href="#services">Planting &amp; Borders</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <div class="footer-contact-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span><a href="tel:+447368692769" id="footer-phone">+44 7368 692769</a></span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Birstall, West Yorkshire</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Mon–Sat · 8am–6pm</span>
+                        </div>
+                        <br>
+                        <a href="../index.html" id="footer-hub-link" style="color:rgba(255,255,255,.4); font-size:.78rem;">← Back to Web Demos Hub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>&copy; 2026 SJH Gardening Maintenance. All rights reserved.</span>
+                <span>Birstall, West Yorkshire</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Hamburger ──────────────────────────────────────────────────
+        const hamburger = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // ── FAQ accordion ──────────────────────────────────────────────
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ── Scroll-in animations ───────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.animationPlayState = 'running';
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll(
+            '.service-card, .testimonial-card, .about-value, .process-step, .trust-pill'
+        ).forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.animation = `fadeUp .6s cubic-bezier(.22,1,.36,1) ${i * 0.07}s forwards paused`;
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
