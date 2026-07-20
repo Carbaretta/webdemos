@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Seasons Gardening Services | Peterborough</title>
+    <meta name="description" content="All Seasons Gardening Services — fencing, garden clearances, turfing, decking, timber works, raised beds, stump &amp; tree removal in Peterborough. Call 07432 266561.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ─── Tokens ─────────────────────────────────────────────────── */
+        :root {
+            --bark:        #1a0e06;    /* near-black dark brown */
+            --bark-mid:    #2e1a0a;
+            --bark-light:  #4a2e14;
+            --gold:        #c8921e;
+            --gold-light:  #e8b050;
+            --gold-pale:   #f7e8c8;
+            --cream:       #f5f0e8;
+            --cream-mid:   #ede5d6;
+            --cream-dark:  #d6c9b4;
+            --surface:     #ffffff;
+
+            --text-dark:   #1a0e06;
+            --text-mid:    #3d2510;
+            --text-muted:  #6b4e30;
+
+            --border:      #cfc0a8;
+
+            --shadow-sm:   0 2px 10px rgba(26,14,6,.08);
+            --shadow-md:   0 8px 28px rgba(26,14,6,.14);
+            --shadow-lg:   0 20px 60px rgba(26,14,6,.2);
+
+            --font-display: 'Oswald', 'Impact', sans-serif;
+            --font-body:    'Source Sans 3', 'Helvetica Neue', sans-serif;
+
+            /* All sharp corners to match the rugged brand */
+            --radius: 0px;
+        }
+
+        /* ─── Reset ──────────────────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        img { display: block; max-width: 100%; }
+        a  { text-decoration: none; color: inherit; }
+
+        /* ─── SVG tree/grain background motif ───────────────────────── */
+        .grain-bg {
+            position: relative;
+        }
+        .grain-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg opacity='0.035' fill='%231a0e06'%3E%3C!-- Tree silhouette tile --%3E%3Cpolygon points='60,8 48,35 54,35 42,58 50,58 35,85 85,85 70,58 78,58 66,35 72,35'/%3E%3Crect x='56' y='85' width='8' height='12'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px 120px;
+            z-index: 0;
+        }
+
+        /* ─── Container ──────────────────────────────────────────────── */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .section { padding: 5.5rem 0; }
+        .section-alt { background: var(--cream-mid); }
+        .section-dark { background: var(--bark); color: #fff; }
+        .section-gold { background: var(--gold); color: var(--bark); }
+
+        /* ─── Typography ─────────────────────────────────────────────── */
+        .eyebrow {
+            font-family: var(--font-display);
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin-bottom: .75rem;
+        }
+        .eyebrow::before, .eyebrow::after {
+            content: '';
+            flex: 1;
+            max-width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+        .section-dark .eyebrow { color: var(--gold-light); }
+        .section-dark .eyebrow::before,
+        .section-dark .eyebrow::after { background: var(--gold-light); }
+
+        .h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            letter-spacing: .03em;
+            text-transform: uppercase;
+            color: var(--bark);
+            line-height: 1.1;
+            margin-bottom: .75rem;
+        }
+        .section-dark .h2 { color: #fff; }
+        .section-gold .h2 { color: var(--bark); }
+
+        .sub {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 540px;
+            line-height: 1.65;
+        }
+        .section-dark .sub { color: rgba(255,255,255,.65); }
+        .section-gold .sub { color: var(--bark-mid); }
+
+        .section-header { margin-bottom: 3.5rem; }
+        .section-header.center { text-align: center; }
+        .section-header.center .eyebrow { justify-content: center; }
+        .section-header.center .sub { margin: 0 auto; }
+
+        /* ─── Gold divider ───────────────────────────────────────────── */
+        .gold-rule {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.25rem;
+        }
+        .gold-rule::before, .gold-rule::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: var(--gold);
+        }
+        .gold-rule svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+
+        /* ─── Buttons ────────────────────────────────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .85rem 2rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all .2s ease;
+            white-space: nowrap;
+        }
+        .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--bark);
+            border-color: var(--gold);
+        }
+        .btn-gold:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-dark {
+            background: var(--bark);
+            color: #fff;
+            border-color: var(--bark);
+        }
+        .btn-dark:hover {
+            background: var(--bark-mid);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-outline-white {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255,255,255,.45);
+        }
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,.1);
+            border-color: #fff;
+        }
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: var(--bark);
+        }
+
+        /* ─── Topbar ─────────────────────────────────────────────────── */
+        .topbar {
+            background: var(--bark);
+            color: rgba(255,255,255,.7);
+            font-size: .8rem;
+            font-weight: 500;
+            padding: .55rem 0;
+            border-bottom: 2px solid var(--gold);
+        }
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .topbar-group { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .topbar-item { display: flex; align-items: center; gap: .4rem; }
+        .topbar-item svg { width: 13px; height: 13px; opacity: .65; }
+        .topbar a { color: var(--gold-light); font-weight: 600; }
+        .topbar a:hover { color: #fff; }
+        .topbar-item.phone-item a { color: #fff; font-family: var(--font-display); font-size: .9rem; letter-spacing: .05em; }
+
+        /* ─── Nav ────────────────────────────────────────────────────── */
+        nav {
+            background: var(--surface);
+            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 300;
+            box-shadow: var(--shadow-sm);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            gap: 1rem;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+            flex-shrink: 0;
+        }
+        .nav-logo img {
+            width: 58px; height: 58px;
+            object-fit: contain;
+        }
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--bark);
+            line-height: 1.15;
+        }
+        .nav-logo-text span {
+            display: block;
+            font-size: .65rem;
+            font-weight: 500;
+            letter-spacing: .2em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: var(--font-display);
+            font-size: .88rem;
+            font-weight: 500;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            transition: color .2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: var(--gold);
+            transition: width .22s;
+        }
+        .nav-links a:hover { color: var(--bark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            font-family: var(--font-display);
+            font-size: .88rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .nav-cta:hover { color: var(--bark); }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 38px; height: 38px;
+            cursor: pointer;
+            border: 2px solid var(--gold);
+            background: none;
+            padding: 7px;
+        }
+        .hamburger span {
+            display: block; height: 2px;
+            background: var(--bark);
+            transition: all .25s;
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 1.25rem 1.5rem;
+            gap: .25rem;
+            border-bottom: 3px solid var(--gold);
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            padding: .65rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .mobile-menu a:last-child { border: none; }
+        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-menu a.gold-link { color: var(--gold); font-weight: 700; }
+
+        /* ─── Hero ───────────────────────────────────────────────────── */
+        .hero {
+            background: var(--bark);
+            color: #fff;
+            padding: 6rem 0 7rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+        }
+        /* Tree silhouette motifs */
+        .hero-trees {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            pointer-events: none;
+        }
+        .hero-tree-r {
+            position: absolute;
+            right: 0; bottom: 0;
+            width: 340px;
+            opacity: .06;
+        }
+        .hero-tree-l {
+            position: absolute;
+            left: -40px; bottom: 0;
+            width: 260px;
+            opacity: .05;
+        }
+        /* Gold geometric accents */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 100% 50%, rgba(200,146,30,.08) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 50% at 0% 100%, rgba(200,146,30,.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-wave {
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: var(--font-display);
+            font-size: .72rem;
+            font-weight: 500;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(200,146,30,.3);
+            padding: .3rem .9rem;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 6.5vw, 4.2rem);
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+        .hero h1 .accent { color: var(--gold); }
+        .hero-tagline {
+            font-size: 1.02rem;
+            color: rgba(255,255,255,.7);
+            max-width: 480px;
+            margin-bottom: 2.25rem;
+            line-height: 1.7;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Hero contact card */
+        .hero-card {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(200,146,30,.3);
+            padding: 2rem 1.75rem;
+            text-align: center;
+        }
+        .hero-card-logo {
+            width: 110px; height: 110px;
+            object-fit: contain;
+            margin: 0 auto 1rem;
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,.4));
+        }
+        .hero-card-name {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: .2rem;
+        }
+        .hero-card-loc {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.4);
+        }
+        hr.hc-rule { border: none; border-top: 1px solid rgba(200,146,30,.25); margin: 1rem 0; }
+        .hero-card-contact { display: flex; flex-direction: column; gap: .5rem; }
+        .hc-item {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-size: .85rem;
+            color: rgba(255,255,255,.7);
+            text-align: left;
+        }
+        .hc-item svg { width: 14px; height: 14px; color: var(--gold); flex-shrink: 0; }
+        .hc-item a { color: var(--gold-light); }
+        .hc-item a:hover { color: #fff; }
+
+        /* ─── Trust strip ────────────────────────────────────────────── */
+        .trust-strip {
+            background: var(--gold);
+            padding: 1rem 0;
+            border-top: 2px solid var(--gold-light);
+            border-bottom: 2px solid var(--bark-light);
+        }
+        .trust-strip .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: var(--font-display);
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--bark);
+            padding: .4rem 2rem;
+            border-right: 1px solid rgba(26,14,6,.2);
+        }
+        .trust-item:last-child { border: none; }
+        .trust-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        /* ─── Services ───────────────────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            padding: 1.75rem 1.5rem;
+            transition: all .22s ease;
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--bark);
+            background: var(--cream);
+        }
+        .service-icon {
+            width: 50px; height: 50px;
+            background: var(--gold-pale);
+            border: 1px solid var(--cream-dark);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.1rem;
+            color: var(--bark);
+            transition: all .22s;
+        }
+        .service-card:hover .service-icon {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+        .service-icon svg { width: 24px; height: 24px; }
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: var(--bark);
+            margin-bottom: .45rem;
+        }
+        .service-card p {
+            font-size: .88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ─── About ──────────────────────────────────────────────────── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-logo-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Saw-blade-like geometric backdrop */
+        .about-logo-bg {
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 1;
+            background: var(--cream-mid);
+            border: 3px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .about-logo-bg::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid var(--cream-dark);
+        }
+        .about-logo-img {
+            width: 220px; height: 220px;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 6px 20px rgba(26,14,6,.15));
+        }
+        .about-badge {
+            position: absolute;
+            bottom: -14px; right: -14px;
+            background: var(--gold);
+            color: var(--bark);
+            font-family: var(--font-display);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            padding: .55rem 1.25rem;
+            box-shadow: var(--shadow-md);
+        }
+        .about-body p {
+            font-size: .97rem;
+            color: var(--text-mid);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .85rem;
+            margin-top: 2rem;
+        }
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: .65rem;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--gold);
+            padding: .85rem 1rem;
+        }
+        .about-feature svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+        .about-feature span {
+            font-family: var(--font-display);
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: var(--bark);
+        }
+
+        /* ─── Testimonials ───────────────────────────────────────────── */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+        .t-card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(200,146,30,.2);
+            padding: 2rem;
+            transition: all .25s;
+            position: relative;
+        }
+        .t-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+        .t-card:hover {
+            background: rgba(255,255,255,.09);
+            transform: translateY(-4px);
+        }
+        .t-stars { font-size: .95rem; color: var(--gold); letter-spacing: 2px; margin-bottom: .75rem; }
+        .t-quote {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            line-height: .75;
+            color: var(--gold);
+            opacity: .3;
+            margin-bottom: .25rem;
+        }
+        .t-text {
+            font-size: .93rem;
+            font-style: italic;
+            color: rgba(255,255,255,.78);
+            line-height: 1.72;
+            margin-bottom: 1.5rem;
+        }
+        .t-author {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            border-top: 1px solid rgba(200,146,30,.2);
+            padding-top: 1rem;
+        }
+        .t-avatar {
+            width: 44px; height: 44px;
+            background: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--bark);
+            flex-shrink: 0;
+        }
+        .t-name { font-family: var(--font-display); font-weight: 600; font-size: .9rem; letter-spacing: .05em; text-transform: uppercase; color: #fff; }
+        .t-source { font-size: .73rem; color: rgba(255,255,255,.4); margin-top: .1rem; }
+
+        /* ─── FAQ ────────────────────────────────────────────────────── */
+        .faq-wrap { max-width: 780px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 1.35rem 0;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--bark);
+            gap: 1rem;
+            transition: color .2s;
+        }
+        .faq-btn:hover { color: var(--gold); }
+        .faq-chevron {
+            width: 26px; height: 26px;
+            flex-shrink: 0;
+            color: var(--gold);
+            transition: transform .25s;
+            background: var(--gold-pale);
+            border: 1px solid var(--cream-dark);
+            padding: 4px;
+        }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--gold); color: var(--bark); border-color: var(--gold); }
+        .faq-body {
+            font-size: .93rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .25s;
+        }
+        .faq-item.open .faq-body { max-height: 300px; padding-bottom: 1.35rem; }
+
+        /* ─── Contact section ────────────────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(200,146,30,.2);
+            padding: 1.25rem 1.5rem;
+            transition: background .2s;
+        }
+        .contact-row:hover { background: rgba(255,255,255,.1); }
+        .contact-icon {
+            width: 48px; height: 48px;
+            background: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--bark);
+            flex-shrink: 0;
+        }
+        .contact-icon svg { width: 22px; height: 22px; }
+        .contact-label {
+            font-family: var(--font-display);
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.45);
+            margin-bottom: .2rem;
+        }
+        .contact-value {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: .04em;
+        }
+        .contact-value a { color: var(--gold-light); }
+        .contact-value a:hover { color: #fff; text-decoration: underline; }
+
+        /* CTA side */
+        .contact-cta {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(200,146,30,.25);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .contact-cta h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: .5rem;
+        }
+        .contact-cta p {
+            font-size: .93rem;
+            color: rgba(255,255,255,.65);
+            margin-bottom: 1.75rem;
+            line-height: 1.6;
+        }
+        .cta-phone-big {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+        .cta-phone-big a { color: inherit; }
+        .cta-phone-big a:hover { text-decoration: underline; }
+
+        /* ─── Footer ─────────────────────────────────────────────────── */
+        footer {
+            background: #0e0804;
+            color: rgba(255,255,255,.45);
+            font-size: .85rem;
+            border-top: 3px solid var(--gold);
+        }
+        .footer-top { padding: 3.5rem 0 2.5rem; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr;
+            gap: 3rem;
+        }
+        .footer-brand img {
+            width: 80px; height: 80px;
+            object-fit: contain;
+            margin-bottom: 1.1rem;
+        }
+        .footer-brand p { font-size: .88rem; line-height: 1.65; }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.1rem;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: .55rem; }
+        .footer-col a { color: rgba(255,255,255,.55); transition: color .2s; }
+        .footer-col a:hover { color: var(--gold-light); }
+        .footer-contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: .55rem;
+            margin-bottom: .7rem;
+            color: rgba(255,255,255,.55);
+        }
+        .footer-contact-row svg { width: 13px; height: 13px; color: var(--gold); flex-shrink: 0; margin-top: 3px; }
+        .footer-contact-row a { color: rgba(255,255,255,.75); }
+        .footer-contact-row a:hover { color: var(--gold-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.06);
+            padding: 1.5rem 0;
+        }
+        .footer-bottom .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .footer-bottom a { color: rgba(255,255,255,.45); }
+        .footer-bottom a:hover { color: var(--gold-light); }
+
+        /* ─── Animations ─────────────────────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .anim { animation: fadeUp .65s cubic-bezier(.22,1,.36,1) both; }
+        .d1 { animation-delay: .08s; } .d2 { animation-delay: .18s; }
+        .d3 { animation-delay: .28s; } .d4 { animation-delay: .38s; }
+
+        /* ─── Responsive ─────────────────────────────────────────────── */
+        @media (max-width: 950px) {
+            .hero .container { grid-template-columns: 1fr; }
+            .hero-card { display: none; }
+            .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-logo-wrap { max-width: 300px; margin: 0 auto; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 700px) {
+            .nav-links, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .section { padding: 3.5rem 0; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-features { grid-template-columns: 1fr; }
+            .topbar-group.hide-mobile { display: none; }
+            .trust-item { padding: .4rem 1.25rem; font-size: .75rem; }
+        }
+        @media (max-width: 480px) {
+            .hero { padding: 4rem 0 6rem; min-height: auto; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .btn { width: 100%; justify-content: center; }
+            .trust-strip .container { flex-direction: column; align-items: stretch; }
+            .trust-item { border-right: none; border-bottom: 1px solid rgba(26,14,6,.15); }
+            .trust-item:last-child { border: none; }
+            .cta-phone-big { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-group">
+                <div class="topbar-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Peterborough &amp; surrounding areas
+                </div>
+            </div>
+            <div class="topbar-group hide-mobile">
+                <div class="topbar-item phone-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <a href="tel:07432266561">07432 266561</a>
+                </div>
+                <div class="topbar-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <a href="mailto:allseasons.treeservices123@gmail.com">allseasons.treeservices123@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav id="main-nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <img src="logo.png" alt="All Seasons Gardening Services">
+                <div class="nav-logo-text">
+                    All Seasons
+                    <span>Gardening Services · Peterborough</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:07432266561" class="nav-cta" id="nav-call-link">☎ 07432 266561</a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:07432266561" class="gold-link">☎ 07432 266561</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <!-- Tree silhouettes -->
+        <svg class="hero-tree-r" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500" fill="white">
+            <polygon points="150,10 100,100 120,100 80,190 105,190 60,300 240,300 195,190 220,190 180,100 200,100"/>
+            <rect x="135" y="300" width="30" height="50"/>
+            <polygon points="80,120 40,200 57,200 25,290 135,290 103,200 120,200"/>
+            <rect x="70" y="290" width="20" height="35"/>
+            <polygon points="220,100 185,175 200,175 170,260 270,260 240,175 255,175"/>
+            <rect x="210" y="260" width="18" height="30"/>
+        </svg>
+        <svg class="hero-tree-l" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 400" fill="white">
+            <polygon points="110,5 68,90 88,90 55,175 78,175 35,280 185,280 142,175 165,175 132,90 152,90"/>
+            <rect x="97" y="280" width="26" height="45"/>
+            <polygon points="50,140 20,210 35,210 8,285 92,285 65,210 80,210"/>
+            <rect x="40" y="285" width="18" height="28"/>
+        </svg>
+
+        <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path d="M0,35 C240,75 480,0 720,35 C960,70 1200,5 1440,35 L1440,70 L0,70 Z" fill="#f5f0e8"/>
+        </svg>
+
+        <div class="container">
+            <div>
+                <div class="hero-tag anim">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Peterborough · Fully Insured · Free Quotes
+                </div>
+                <h1 class="anim d1">
+                    All Seasons<br>
+                    <span class="accent">Gardening</span><br>
+                    Services
+                </h1>
+                <p class="hero-tagline anim d2">
+                    Professional gardening, tree work and outdoor services across Peterborough. From fencing and decking to stump removal and full garden clearances.
+                </p>
+                <div class="hero-actions anim d3">
+                    <a href="tel:07432266561" class="btn btn-gold" id="hero-call-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call 07432 266561
+                    </a>
+                    <a href="#services" class="btn btn-outline-white" id="hero-services-btn">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-card anim d2">
+                <img src="logo.png" alt="All Seasons" class="hero-card-logo">
+                <div class="hero-card-name">All Seasons</div>
+                <div class="hero-card-loc">📍 Peterborough</div>
+                <hr class="hc-rule">
+                <div class="hero-card-contact">
+                    <div class="hc-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:07432266561">07432 266561</a>
+                    </div>
+                    <div class="hc-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <a href="https://wa.me/447432266561">WhatsApp: +44 7432 266561</a>
+                    </div>
+                    <div class="hc-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:allseasons.treeservices123@gmail.com" style="font-size:.78rem;">allseasons.treeservices123<br>@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust strip -->
+    <div class="trust-strip">
+        <div class="container">
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Free Quotes
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Fully Insured
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                5-Star Rated
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Year-Round Service
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="section grain-bg" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">What We Do</div>
+                <h2 class="h2">Our Services</h2>
+                <p class="sub">A comprehensive range of gardening and outdoor services delivered to the highest standard across Peterborough.</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card" id="svc-fencing">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="4" x2="4" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="20" y1="4" x2="20" y2="20"/><line x1="2" y1="8" x2="22" y2="8"/><line x1="2" y1="16" x2="22" y2="16"/></svg>
+                    </div>
+                    <h3>Fencing</h3>
+                    <p>Supply and installation of all fence types — panel, post &amp; rail, closeboard and more. Repairs and replacements also available.</p>
+                </div>
+
+                <div class="service-card" id="svc-garden-waste">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6M9 6V4h6v2"/></svg>
+                    </div>
+                    <h3>Garden Waste Removal</h3>
+                    <p>Efficient collection and responsible disposal of all garden waste, including grass clippings, branches, soil and general green waste.</p>
+                </div>
+
+                <div class="service-card" id="svc-clearance">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <h3>Garden Clearances</h3>
+                    <p>Full clearances of overgrown, neglected or end-of-tenancy gardens — stripped back, tidied and left ready for its next chapter.</p>
+                </div>
+
+                <div class="service-card" id="svc-weeding">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 2 2 2c0 5 5 10 10 10z"/><path d="M12 12c0-5 5-10 10-10-2 5-5 8-10 10z"/></svg>
+                    </div>
+                    <h3>De-Weeding</h3>
+                    <p>Thorough removal of weeds from borders, driveways, patios and lawns, keeping your garden clean, healthy and weed-free.</p>
+                </div>
+
+                <div class="service-card" id="svc-turfing">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                    </div>
+                    <h3>Turfing</h3>
+                    <p>Professional turf laying for a beautiful, even lawn — including ground preparation, levelling and premium-quality turf supply.</p>
+                </div>
+
+                <div class="service-card" id="svc-decking">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Decking</h3>
+                    <p>Design and construction of timber decking areas to create beautiful outdoor entertaining and relaxation spaces.</p>
+                </div>
+
+                <div class="service-card" id="svc-timber">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>Timber Works</h3>
+                    <p>Bespoke timber structures and woodwork including pergolas, gates, garden furniture, log stores and more.</p>
+                </div>
+
+                <div class="service-card" id="svc-raised-beds">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="0"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/></svg>
+                    </div>
+                    <h3>Raised Beds</h3>
+                    <p>Design and construction of timber raised beds for vegetables, herbs or flowers — perfect for both style and practicality.</p>
+                </div>
+
+                <div class="service-card" id="svc-stump">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Stump Removal</h3>
+                    <p>Complete stump grinding and removal, eliminating hazards and freeing up valuable garden space for planting or landscaping.</p>
+                </div>
+
+                <div class="service-card" id="svc-tree-removal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 20.18"/><path d="M9.46 11.38C11.56 9.28 13.7 7.5 17 7"/><path d="M17 8l2 2M17 8l-2 2"/></svg>
+                    </div>
+                    <h3>Tree Removal</h3>
+                    <p>Safe, professional removal of unwanted or dangerous trees of all sizes, with full clean-up and responsible timber disposal.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-logo-wrap">
+                    <div class="about-logo-bg">
+                        <img src="logo.png" alt="All Seasons Gardening Services" class="about-logo-img">
+                    </div>
+                    <div class="about-badge">Peterborough</div>
+                </div>
+                <div class="about-body">
+                    <div class="eyebrow">About Us</div>
+                    <h2 class="h2">Your Local Outdoor Experts</h2>
+                    <div class="gold-rule">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p>All Seasons Gardening Services is a trusted, Peterborough-based team of outdoor professionals with a passion for transforming outdoor spaces. From small garden tidy-ups to large-scale tree works and landscaping projects, we bring skill, care and a strong work ethic to every job.</p>
+                    <p>We operate all year round — as our name suggests — ensuring your garden gets the attention it needs no matter the season. We take pride in our reliability, our attention to detail and our commitment to leaving every site cleaner than we found it.</p>
+                    <p>All work is fully insured and carried out to the highest standards. Get in touch today for a friendly, free quote.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Fully Insured</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Year-Round</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Free Quotes</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span>5-Star Quality</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-dark" id="testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <div class="eyebrow">Customer Reviews</div>
+                <h2 class="h2">What Our Customers Say</h2>
+                <p class="sub">We've built a strong reputation across Peterborough for reliable, high-quality outdoor services.</p>
+            </div>
+            <div class="testimonials-grid">
+
+                <div class="t-card" id="review-1">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote">"</div>
+                    <p class="t-text">Had the team come and clear a massive overgrown section at the bottom of my garden — completely unrecognisable now. Absolute professionals. They were efficient, courteous and left the site spotless. Highly recommend.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">DH</div>
+                        <div>
+                            <div class="t-name">David H.</div>
+                            <div class="t-source">Google Review · Peterborough</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t-card" id="review-2">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote">"</div>
+                    <p class="t-text">Got a new fence fitted and a raised bed built. Brilliant craftsmanship, fair pricing and finished exactly when they said it would be. Will absolutely be using All Seasons again for our decking project next year.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">SK</div>
+                        <div>
+                            <div class="t-name">Sandra K.</div>
+                            <div class="t-source">Facebook Review · Bretton</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t-card" id="review-3">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote">"</div>
+                    <p class="t-text">Called them for a tree that was overhanging the house and becoming a safety concern. They came out quickly, assessed the situation and had it removed safely within the day. Tidy, professional and great value. Couldn't ask for more.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">MP</div>
+                        <div>
+                            <div class="t-name">Mark P.</div>
+                            <div class="t-source">Google Review · Yaxley</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t-card" id="review-4">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote">"</div>
+                    <p class="t-text">Had new turf laid after years of patchy grass and it looks absolutely stunning. They prepared the ground thoroughly before laying it and the result is a perfect, even lawn. So pleased with the outcome — worth every penny.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">JL</div>
+                        <div>
+                            <div class="t-name">Julie L.</div>
+                            <div class="t-source">Google Review · Peterborough</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t-card" id="review-5">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote">"</div>
+                    <p class="t-text">Really impressed from start to finish. They came out to quote the same week I called, gave a fair price and got the stump removal done quickly and cleanly. You'd never know there was a tree there. Brilliant service.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">TC</div>
+                        <div>
+                            <div class="t-name">Tom C.</div>
+                            <div class="t-source">Facebook Review · Werrington</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t-card" id="review-6">
+                    <div class="t-stars">★★★★★</div>
+                    <div class="t-quote">"</div>
+                    <p class="t-text">Used All Seasons for a complete garden clearance on a rental property between tenants. Transformed a complete mess into a clean, presentable outdoor space. Reliable, reasonably priced and very professional. Highly recommended.</p>
+                    <div class="t-author">
+                        <div class="t-avatar">RN</div>
+                        <div>
+                            <div class="t-name">Rachel N.</div>
+                            <div class="t-source">Google Review · Orton</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section grain-bg" id="faq">
+        <div class="container">
+            <div class="section-header center">
+                <div class="eyebrow">FAQ</div>
+                <h2 class="h2">Common Questions</h2>
+                <p class="sub">Everything you need to know. Can't find your answer? Just give us a call on 07432 266561.</p>
+            </div>
+            <div class="faq-wrap" id="faq-list">
+
+                <div class="faq-item" id="faq-1">
+                    <button class="faq-btn" aria-expanded="false">
+                        How do I get a quote?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Call us on <strong>07432 266561</strong>, WhatsApp us on <strong>+44 7432 266561</strong>, or email <strong>allseasons.treeservices123@gmail.com</strong>. We'll arrange a visit to assess your garden and provide a completely free, no-obligation quote.</div>
+                </div>
+
+                <div class="faq-item" id="faq-2">
+                    <button class="faq-btn" aria-expanded="false">
+                        What areas do you cover?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">We're based in Peterborough and cover the wider Peterborough area including Bretton, Werrington, Orton, Yaxley, Whittlesey, Eye, Deeping St James and surrounding villages. Not sure if we reach you? Just ask!</div>
+                </div>
+
+                <div class="faq-item" id="faq-3">
+                    <button class="faq-btn" aria-expanded="false">
+                        Do you work all year round?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Yes — and that's where our name comes from! We operate all year round so your garden is always in safe hands no matter the time of year. Whether it's a winter clearance, spring turfing or summer fencing project, we're here.</div>
+                </div>
+
+                <div class="faq-item" id="faq-4">
+                    <button class="faq-btn" aria-expanded="false">
+                        Are you insured to carry out tree work?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Yes — All Seasons Gardening Services is fully insured for all the services we offer, including tree removal and stump grinding. You can book with complete confidence that all work is covered.</div>
+                </div>
+
+                <div class="faq-item" id="faq-5">
+                    <button class="faq-btn" aria-expanded="false">
+                        Do you take away the waste?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Yes — we offer a full waste removal and disposal service for all the rubbish and green waste generated during your job. We always leave your property clean and tidy. Just mention it when you enquire and we'll include it in your quote.</div>
+                </div>
+
+                <div class="faq-item" id="faq-6">
+                    <button class="faq-btn" aria-expanded="false">
+                        How much does tree removal cost?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">Every tree is different in terms of size, location and access, so pricing varies. We always visit and provide a free, detailed quote before any work begins. Contact us and we'll get a quote over to you as quickly as possible.</div>
+                </div>
+
+                <div class="faq-item" id="faq-7">
+                    <button class="faq-btn" aria-expanded="false">
+                        What payment methods do you accept?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-body">We accept cash and bank transfer. Payment is required on completion of work. We'll always confirm the agreed price before starting so there are no surprises.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header center">
+                <div class="eyebrow">Get In Touch</div>
+                <h2 class="h2">Contact Us Today</h2>
+                <p class="sub">Call, WhatsApp or email — we'll get back to you quickly with a free, no-obligation quote.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-row" id="contact-phone">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value"><a href="tel:07432266561">07432 266561</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-row" id="contact-whatsapp">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">WhatsApp</div>
+                            <div class="contact-value"><a href="https://wa.me/447432266561">+44 7432 266561</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-row" id="contact-email">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value"><a href="mailto:allseasons.treeservices123@gmail.com">allseasons.treeservices123@gmail.com</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-row" id="contact-location">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Location</div>
+                            <div class="contact-value">Peterborough, Cambridgeshire</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>Free Quote — No Obligation</h3>
+                    <p>Ready to transform your outdoor space? Get in touch and we'll organise a free site visit and quote at a time that suits you.</p>
+                    <span class="cta-phone-big">
+                        <a href="tel:07432266561" id="cta-phone-link">07432 266561</a>
+                    </span>
+                    <div style="display:flex;flex-direction:column;gap:.75rem;">
+                        <a href="tel:07432266561" class="btn btn-gold" id="cta-call-btn" style="width:100%;justify-content:center;font-size:1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            Call Now
+                        </a>
+                        <a href="https://wa.me/447432266561" class="btn btn-outline-white" id="cta-whatsapp-btn" style="width:100%;justify-content:center;font-size:1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="All Seasons Gardening Services">
+                        <p>All Seasons Gardening Services — professional, fully insured outdoor services across Peterborough and surrounding areas. Working all year round so your garden never has to wait.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Fencing</a></li>
+                            <li><a href="#services">Garden Waste Removal</a></li>
+                            <li><a href="#services">Garden Clearances</a></li>
+                            <li><a href="#services">De-Weeding</a></li>
+                            <li><a href="#services">Turfing</a></li>
+                            <li><a href="#services">Decking</a></li>
+                            <li><a href="#services">Timber Works</a></li>
+                            <li><a href="#services">Raised Beds</a></li>
+                            <li><a href="#services">Stump Removal</a></li>
+                            <li><a href="#services">Tree Removal</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <div class="footer-contact-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span><a href="tel:07432266561" id="footer-phone">07432 266561</a></span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span><a href="mailto:allseasons.treeservices123@gmail.com">allseasons.treeservices123@gmail.com</a></span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Peterborough, Cambridgeshire</span>
+                        </div>
+                        <br>
+                        <a href="../index.html" id="footer-hub-link" style="color:rgba(255,255,255,.35); font-size:.78rem;">← Back to Web Demos Hub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>&copy; 2026 All Seasons Gardening Services. All rights reserved.</span>
+                <span>Peterborough, Cambridgeshire</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Hamburger ──────────────────────────────────────────────────
+        const hamburger = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+        }));
+
+        // ── FAQ accordion ──────────────────────────────────────────────
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ── Scroll-in animations ───────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.animationPlayState = 'running';
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll(
+            '.service-card, .t-card, .about-feature, .contact-row, .trust-item'
+        ).forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.animation = `fadeUp .6s cubic-bezier(.22,1,.36,1) ${i * 0.06}s forwards paused`;
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
