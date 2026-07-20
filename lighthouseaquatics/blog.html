@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquatic Wisdom Blog | Lighthouse Aquatics Batley</title>
+    <meta name="description" content="Expert, easy-to-understand articles on fish husbandry, aquarium cycling, and water parameters from Lighthouse Aquatics.">
+    
+    <!-- Project Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="aquatic-bg">
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo" id="nav-logo-link">
+                <!-- Inline SVG Logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="beacon-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8"/>
+                            <stop offset="60%" stop-color="#0d9488" stop-opacity="0.2"/>
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                    <polygon points="50,25 95,15 95,55" fill="url(#beacon-glow)" />
+                    <path d="M43,80 L57,80 L54,35 L46,35 Z" fill="#475569" />
+                    <rect x="44" y="27" width="12" height="8" rx="2" fill="#0f172a" />
+                    <circle cx="50" cy="31" r="5" fill="#f59e0b" />
+                    <path d="M30,80 Q50,75 70,80 Q80,85 90,83 L90,90 L10,90 L10,83 Q20,85 30,80 Z" fill="#64748b" />
+                    <path d="M5,90 Q25,86 45,90 Q65,94 85,90 T100,90 L100,98 L0,98 Z" fill="#0d9488" opacity="0.6" />
+                    <path d="M72,30 Q80,26 84,30 Q88,34 84,38 Q80,34 72,30 Z M83,30 L87,27 L86,33 Z" fill="#0f172a" opacity="0.8" />
+                </svg>
+                <div class="logo-text">
+                    Lighthouse <span>Aquatics</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="blog.html" class="active">Aquatic Blog</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="product.html" class="cart-icon-btn" id="cart-btn" aria-label="Shopping Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+                <button class="mobile-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Header Section -->
+    <section class="blog-header">
+        <div class="container" style="text-align: center;">
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">Aquatic Wisdom</h1>
+            <p style="color: var(--text-medium); max-width: 500px; margin: 0 auto; font-size: 0.95rem;">Articles on fish husbandry using plain, accurate language to help you maintain a healthy aquarium.</p>
+        </div>
+    </section>
+
+    <!-- Main Blog Grid -->
+    <main class="container blog-grid" style="padding-bottom: 6rem;">
+        <!-- Left Side: Blog Articles -->
+        <div class="blog-posts">
+            <!-- Article 1: Nitrogen Cycle -->
+            <article class="blog-card" id="article-nitrogen-cycle">
+                <div class="blog-meta">
+                    <span class="blog-category">Husbandry Basics</span>
+                    <span>July 18, 2026</span>
+                    <span>5 Min Read</span>
+                </div>
+                <h2>The Nitrogen Cycle: The Foundation of Aquarium Filtration</h2>
+                <p>Before introducing fish to a newly set up aquarium, you must establish biological filtration through a process called the nitrogen cycle. Fish release toxic ammonia into the water through gills, urine, and decomposing solid waste. Leftover fish food also decays into ammonia. If ammonia levels rise, fish will experience gill damage, stress, and eventually death.</p>
+                <p>Biological filtration relies on colonies of beneficial, nitrifying bacteria. The cycle occurs in two stages: first, bacteria called <em>Nitrosomonas</em> colonize the aquarium filter and gravel, converting ammonia into nitrite. Nitrite is also highly toxic to fish. Next, a second group of bacteria (<em>Nitrospira</em>) develops to convert nitrite into nitrate. Nitrate is far less toxic and can safely accumulate in small amounts between scheduled water changes.</p>
+                <p>Establishing this biological filter usually takes 4 to 6 weeks. To start the cycle, add a source of ammonia (such as a tiny amount of fish food or a commercial bottled bacteria product) to the empty tank. Regularly test the water using a liquid test kit. You will see ammonia levels rise and fall, followed by a rise and fall in nitrites. The cycle is complete only when both ammonia and nitrite test at 0 parts per million (ppm), and nitrates begin to accumulate.</p>
+            </article>
+
+            <!-- Article 2: Water Parameters -->
+            <article class="blog-card" id="article-water-parameters">
+                <div class="blog-meta">
+                    <span class="blog-category">Water Quality</span>
+                    <span>July 15, 2026</span>
+                    <span>4 Min Read</span>
+                </div>
+                <h2>Understanding and Monitoring Essential Water Parameters</h2>
+                <p>Maintaining stable water chemistry is critical for fish survival. Fish are cold-blooded organisms whose biological functions are directly affected by their aquatic environment. While different fish species are adapted to distinct natural habitats, the most important rule of water chemistry is avoiding rapid fluctuations, which stress fish and compromise their immune systems.</p>
+                <p>There are four core parameters you should monitor regularly:</p>
+                <ul style="list-style: disc; margin: 0.5rem 0 1.5rem 2rem; color: var(--text-medium); display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
+                    <li><strong>pH (Potential Hydrogen):</strong> Measures how acidic or alkaline the water is on a scale of 0 to 14. A neutral pH is 7.0. Most community fish thrive between 6.5 and 7.5, but species like African cichlids prefer alkaline water (8.0+), while South American tetras prefer acidic conditions (6.0 - 6.8).</li>
+                    <li><strong>Temperature:</strong> Tropical fish require a stable temperature, typically between 24°C and 27°C (75°F to 80°F), maintained by an aquarium heater. Coldwater fish, like goldfish, thrive in cooler rooms without a heater (15°C to 20°C).</li>
+                    <li><strong>General Hardness (GH):</strong> Measures the concentration of dissolved calcium and magnesium ions. Hard water contains high levels of minerals, while soft water contains very few.</li>
+                    <li><strong>Carbonate Hardness (KH):</strong> Measures the water's buffering capacity. KH acts as a stabilizer that prevents sudden pH crashes, which can kill fish overnight. Maintain KH at 3° dKH or higher to keep your pH stable.</li>
+                </ul>
+                <p>Always test your tap water before using it. Many municipal water supplies contain chlorine or chloramines to make it safe for humans, but these chemicals are lethal to fish. Always add a commercial tap water conditioner (dechlorinator) to neutralize these compounds before introducing new water to the tank.</p>
+            </article>
+
+            <!-- Article 3: Maintenance Routine -->
+            <article class="blog-card" id="article-maintenance-routine">
+                <div class="blog-meta">
+                    <span class="blog-category">Routine Care</span>
+                    <span>July 10, 2026</span>
+                    <span>4 Min Read</span>
+                </div>
+                <h2>Establishing Daily and Weekly Fish Maintenance Routines</h2>
+                <p>A thriving aquarium requires simple, consistent maintenance. The most common cause of aquarium failure is overfeeding and lack of routine water changes. In the wild, fish constantly swim in massive volumes of fresh water that dilutes and carries away waste. In a closed home aquarium, waste products build up over time and must be removed manually.</p>
+                <p><strong>Daily Care:</strong> Feed your fish once or twice a day. Only offer an amount of food they can completely consume within two minutes. Any food left sinking to the bottom will rot, polluting the water and causing ammonia spikes. Also, check that the filter is running smoothly, the heater indicator light is functioning, and all fish are swimming actively without gasping at the surface.</p>
+                <p><strong>Weekly or Biweekly Care:</strong> Perform a 20% to 30% water change. Instead of scooping water from the surface, use a gravel vacuum (siphon) to clean the substrate. Push the vacuum cylinder into the gravel to lift out trapped debris, uneaten food, and fish waste. This removes solid pollutants and dilutes dissolved nitrates.</p>
+                <p><strong>Filter Maintenance:</strong> Clean your filter media once a month to prevent clogging, which reduces water flow. Never rinse filter cartridges, sponges, or ceramic rings under the tap. Tap water contains chlorine that will instantly kill the beneficial biological bacteria colonizing the media. Instead, fill a bucket with siphoned tank water and gently squeeze or rinse the filter media in it to remove debris, preserving the life-saving bacteria.</p>
+            </article>
+        </div>
+
+        <!-- Right Side: Sidebar Widget -->
+        <aside class="sidebar">
+            <!-- Sidebar Card -->
+            <div class="sidebar-widget">
+                <img src="assets/aquarium_maintenance.png" alt="Conducting aquarium water test using liquid reagent kit." style="margin-bottom: 1.25rem; width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <h3>Husbandry Advice</h3>
+                <p style="color: var(--text-medium); font-size: 0.88rem; margin-bottom: 1rem;">At Lighthouse Aquatics, we believe education is key. If you are experiencing water clarity issues, algae problems, or fish illness, bring a small sample of your aquarium water to our store in Batley for free, professional analysis.</p>
+                <a href="index.html#contact" class="btn btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.65rem 1rem;">Get Water Checked</a>
+            </div>
+
+            <!-- Recent Articles Widget -->
+            <div class="sidebar-widget">
+                <h3>Related Articles</h3>
+                <a href="#article-nitrogen-cycle" class="recent-post-link">
+                    <h4>The Nitrogen Cycle</h4>
+                    <span>Biological Filtration Basics</span>
+                </a>
+                <a href="#article-water-parameters" class="recent-post-link">
+                    <h4>Essential Water Parameters</h4>
+                    <span>Monitoring Water Chemistry</span>
+                </a>
+                <a href="#article-maintenance-routine" class="recent-post-link">
+                    <h4>Maintenance Routines</h4>
+                    <span>Daily & Weekly Feeding/Water Changes</span>
+                </a>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="width: 30px; height: 30px;">
+                        <polygon points="50,25 95,15 95,55" fill="#f59e0b" opacity="0.6" />
+                        <path d="M43,80 L57,80 L54,35 L46,35 Z" fill="#475569" />
+                        <circle cx="50" cy="31" r="5" fill="#f59e0b" />
+                    </svg>
+                    <span style="font-size: 1.15rem;">Lighthouse <span>Aquatics</span></span>
+                </div>
+                <p>Yorkshire's choice for premium aquascaping and aquatic livestock. Fully licensed and dedicated to fish health.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Store Pages</h3>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="product.html">Example Product</a></li>
+                    <li><a href="blog.html">Aquatic Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="index.html#about">Aquarium Setup</a></li>
+                    <li><a href="index.html#about">Water Parameter Testing</a></li>
+                    <li><a href="index.html#about">Custom Tank Design</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Shop</h3>
+                <ul>
+                    <li style="color: var(--text-medium); font-size: 0.85rem;">401 Bradford Rd<br>Batley WF17 5LY</li>
+                    <li><a href="tel:07432707797">Tel: 07432 707797</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Lighthouse Aquatics. All Rights Reserved. Fully Licensed Pet Retailer.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update Cart Badge from localStorage
+        function updateCartBadge() {
+            const count = localStorage.getItem('aquatics_cart_count') || 0;
+            const badge = document.getElementById('cart-count');
+            if (badge) {
+                badge.innerText = count;
+            }
+        }
+        updateCartBadge();
+        window.addEventListener('storage', updateCartBadge);
+
+        // Toggle mobile nav overlay
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('nav');
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('mobile-open');
+                if (nav.classList.contains('mobile-open')) {
+                    nav.style.display = 'block';
+                    nav.style.position = 'absolute';
+                    nav.style.top = '72px';
+                    nav.style.left = '0';
+                    nav.style.width = '100%';
+                    nav.style.background = '#ffffff';
+                    nav.style.padding = '1.25rem 1.5rem';
+                    nav.style.borderBottom = '1px solid var(--border-light)';
+                    document.querySelector('.nav-links').style.flexDirection = 'column';
+                    document.querySelector('.nav-links').style.alignItems = 'flex-start';
+                    document.querySelector('.nav-links').style.gap = '0.85rem';
+                } else {
+                    nav.style.display = '';
+                    nav.style.position = '';
+                    nav.style.top = '';
+                    nav.style.left = '';
+                    nav.style.width = '';
+                    nav.style.background = '';
+                    nav.style.padding = '';
+                    nav.style.borderBottom = '';
+                    document.querySelector('.nav-links').style.flexDirection = '';
+                    document.querySelector('.nav-links').style.alignItems = '';
+                    document.querySelector('.nav-links').style.gap = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

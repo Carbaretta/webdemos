@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="beacon-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8"></stop>
+                            <stop offset="60%" stop-color="#0d9488" stop-opacity="0.2"></stop>
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+                        </linearGradient>
+                    </defs>
+                    <!-- Lighthouse Beacon Cone -->
+                    <polygon points="50,25 95,15 95,55" fill="url(#beacon-glow)"></polygon>
+                    <!-- Lighthouse Tower -->
+                    <path d="M43,80 L57,80 L54,35 L46,35 Z" fill="#475569"></path>
+                    <!-- Lantern Room / Light Source -->
+                    <rect x="44" y="27" width="12" height="8" rx="2" fill="#0f172a"></rect>
+                    <!-- Beacon Beam Source -->
+                    <circle cx="50" cy="31" r="5" fill="#f59e0b"></circle>
+                    <!-- Foundation Rocks -->
+                    <path d="M30,80 Q50,75 70,80 Q80,85 90,83 L90,90 L10,90 L10,83 Q20,85 30,80 Z" fill="#64748b"></path>
+                    <!-- Stylized Water waves -->
+                    <path d="M5,90 Q25,86 45,90 Q65,94 85,90 T100,90 L100,98 L0,98 Z" fill="#0d9488" opacity="0.6"></path>
+                    <!-- Fish Silhouette inside the beacon cone -->
+                    <path d="M72,30 Q80,26 84,30 Q88,34 84,38 Q80,34 72,30 Z M83,30 L87,27 L86,33 Z" fill="#0f172a" opacity="0.8"></path>
+                </svg>
