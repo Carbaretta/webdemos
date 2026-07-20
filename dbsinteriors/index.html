@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB's Exterior Cleans & Garden Maintenance | Bradford</title>
+    <meta name="description" content="DB's Exterior Cleans & Garden Maintenance — window cleaning, patio & driveway cleaning, bin cleaning, gutter clearing, grass cutting, rubbish removals and garden maintenance in Bradford. Call 07851 542614 for a free quote.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ── Design Tokens ───────────────────────────────────────────── */
+        :root {
+            --bg:           #f5f7fa;
+            --surface:      #ffffff;
+            --surface-alt:  #eef1f6;
+            --border:       #dde2ec;
+
+            --navy:         #0f2040;
+            --navy-mid:     #1a3258;
+            --teal:         #0a7ea4;
+            --teal-light:   #e6f4f9;
+            --teal-mid:     #b3dced;
+            --amber:        #f59e0b;
+            --amber-light:  #fef3c7;
+
+            --text-primary:   #0f2040;
+            --text-secondary: #4b5d78;
+            --text-muted:     #8494a8;
+
+            --radius:   0px;   /* sharp corners throughout */
+            --shadow-sm: 0 2px 8px rgba(15,32,64,.07);
+            --shadow-md: 0 6px 24px rgba(15,32,64,.1);
+            --shadow-lg: 0 16px 48px rgba(15,32,64,.13);
+
+            --font: 'Inter', system-ui, sans-serif;
+        }
+
+        /* ── Reset ───────────────────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+
+        /* ── Utilities ───────────────────────────────────────────────── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: var(--font);
+            font-weight: 600;
+            font-size: .95rem;
+            padding: .8rem 1.75rem;
+            border: none;
+            cursor: pointer;
+            transition: all .2s ease;
+            letter-spacing: .02em;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #086b8c;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,.5);
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,.12);
+            border-color: #fff;
+        }
+
+        .btn-amber {
+            background: var(--amber);
+            color: var(--navy);
+        }
+        .btn-amber:hover {
+            background: #d97706;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ── Top bar ─────────────────────────────────────────────────── */
+        .topbar {
+            background: var(--navy);
+            color: rgba(255,255,255,.8);
+            font-size: .82rem;
+            padding: .5rem 0;
+        }
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .topbar a { color: #fff; font-weight: 500; }
+        .topbar a:hover { text-decoration: underline; }
+
+        /* ── Nav ─────────────────────────────────────────────────────── */
+        nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        .nav-logo-mark {
+            width: 42px;
+            height: 42px;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: -.5px;
+            flex-shrink: 0;
+        }
+        .nav-logo-text {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+        .nav-logo-text span {
+            display: block;
+            font-weight: 400;
+            font-size: .8rem;
+            color: var(--text-secondary);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color .2s;
+        }
+        .nav-links a:hover { color: var(--teal); }
+        .nav-cta {
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--teal);
+        }
+        .nav-cta:hover { text-decoration: underline; }
+
+        /* ── Hero ────────────────────────────────────────────────────── */
+        .hero {
+            background: var(--navy);
+            color: #fff;
+            padding: 5rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 110% 50%, rgba(10,126,164,.35) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at -10% 80%, rgba(245,158,11,.12) 0%, transparent 70%);
+        }
+        .hero .container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(10,126,164,.25);
+            border: 1px solid rgba(10,126,164,.5);
+            color: var(--teal-mid);
+            font-size: .78rem;
+            font-weight: 600;
+            padding: .35rem .85rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -.025em;
+            margin-bottom: .75rem;
+        }
+        .hero h1 span { color: var(--amber); }
+        .hero-tagline {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,.7);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .hero-phone-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.12);
+            padding: 1.75rem 2rem;
+            text-align: center;
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+        .hero-phone-card .label {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.5);
+            margin-bottom: .5rem;
+        }
+        .hero-phone-card .number {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -.01em;
+        }
+        .hero-phone-card .sub {
+            font-size: .78rem;
+            color: rgba(255,255,255,.45);
+            margin-top: .35rem;
+        }
+
+        /* ── Trust strip ─────────────────────────────────────────────── */
+        .trust-strip {
+            background: var(--teal);
+            color: #fff;
+            padding: 1rem 0;
+        }
+        .trust-strip .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: .55rem;
+            font-size: .88rem;
+            font-weight: 500;
+        }
+        .trust-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* ── Section titles ──────────────────────────────────────────── */
+        .section { padding: 5rem 0; }
+        .section-alt { background: var(--surface-alt); }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+            font-weight: 800;
+            letter-spacing: -.025em;
+            color: var(--navy);
+            margin-bottom: .6rem;
+        }
+        .section-sub {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+        }
+        .section-header { margin-bottom: 3rem; }
+
+        /* ── Services grid ───────────────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            transition: all .25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--teal);
+            transition: width .3s ease;
+        }
+        .service-card:hover::after { width: 100%; }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--teal-mid);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--teal-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            color: var(--teal);
+        }
+        .service-icon svg { width: 24px; height: 24px; }
+
+        .service-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: .5rem;
+        }
+        .service-card p {
+            font-size: .9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ── Pricing highlight ───────────────────────────────────────── */
+        .pricing-section { padding: 4rem 0; background: var(--navy); color: #fff; }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .price-card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            padding: 2rem;
+            text-align: center;
+            transition: all .25s;
+        }
+        .price-card:hover {
+            background: rgba(255,255,255,.1);
+            transform: translateY(-4px);
+        }
+        .price-card .price-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--amber);
+            line-height: 1;
+            margin: .5rem 0;
+        }
+        .price-card .price-label {
+            font-size: .78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: rgba(255,255,255,.5);
+        }
+        .price-card .price-desc {
+            font-size: .88rem;
+            color: rgba(255,255,255,.65);
+            margin-top: .5rem;
+        }
+        .price-card .price-highlight {
+            font-size: .82rem;
+            color: var(--amber);
+            font-weight: 600;
+            margin-top: .75rem;
+        }
+
+        /* ── Why choose us ───────────────────────────────────────────── */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .reason-item {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+        }
+        .reason-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--teal);
+            line-height: 1;
+            opacity: .25;
+        }
+        .reason-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .reason-item p {
+            font-size: .9rem;
+            color: var(--text-secondary);
+        }
+
+        /* ── CTA band ────────────────────────────────────────────────── */
+        .cta-band {
+            background: var(--teal);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .cta-band h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -.025em;
+            margin-bottom: .75rem;
+        }
+        .cta-band p {
+            font-size: 1rem;
+            color: rgba(255,255,255,.8);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-phone-big {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -.02em;
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+        .cta-phone-big a { color: inherit; }
+
+        /* ── Footer ──────────────────────────────────────────────────── */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,.55);
+            padding: 2.5rem 0;
+            font-size: .85rem;
+        }
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        footer a { color: rgba(255,255,255,.75); }
+        footer a:hover { color: #fff; }
+
+        /* ── Animations ──────────────────────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .anim { animation: fadeUp .6s ease both; }
+        .anim-d1 { animation-delay: .1s; }
+        .anim-d2 { animation-delay: .2s; }
+        .anim-d3 { animation-delay: .3s; }
+
+        /* ── Responsive ──────────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+            .hero-phone-card { width: 100%; }
+            .nav-links { display: none; }
+            .topbar .container { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 500px) {
+            .hero-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="container">
+            <span>📍 Serving Bradford &amp; surrounding areas</span>
+            <span>Call us: <a href="tel:07851542614">07851 542614</a> &nbsp;·&nbsp; One-off or regular work available</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <div class="nav-logo-mark">DB</div>
+                <div class="nav-logo-text">
+                    DB's Exterior Cleans
+                    <span>&amp; Garden Maintenance</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:07851542614" class="nav-cta" id="nav-call-btn">📞 07851 542614</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div>
+                <div class="hero-badge anim">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Friendly &amp; Affordable · Free Quotes
+                </div>
+                <h1 class="anim anim-d1">
+                    We Clean It.<br>
+                    We Clear It.<br>
+                    <span>We Maintain It.</span>
+                </h1>
+                <p class="hero-tagline anim anim-d2">
+                    Professional exterior cleaning &amp; garden maintenance across Bradford.<br>Trusted by homeowners — will beat any price.
+                </p>
+                <div class="hero-actions anim anim-d3">
+                    <a href="tel:07851542614" class="btn btn-amber" id="hero-call-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call 07851 542614
+                    </a>
+                    <a href="#services" class="btn btn-outline" id="hero-services-btn">View All Services</a>
+                </div>
+            </div>
+            <div class="hero-phone-card anim anim-d2">
+                <div class="label">Free Quote</div>
+                <div class="number">07851 542614</div>
+                <div class="sub">Mon–Sat · 8am–6pm</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust strip -->
+    <div class="trust-strip">
+        <div class="container">
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Free Quotes
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                One-off or Regular
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Will Beat Any Price
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Friendly &amp; Reliable
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-sub">Everything you need to keep your property looking its best — inside and out.</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card" id="service-window">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+                    </div>
+                    <h3>Window Cleaning</h3>
+                    <p>Sparkling clean windows that let the light in. We use professional methods to leave your glass streak-free.</p>
+                </div>
+
+                <div class="service-card" id="service-patio">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Patio &amp; Driveway Cleans</h3>
+                    <p>High-pressure washing to blast away grime, moss, and algae from your driveways, patios, and paths.</p>
+                </div>
+
+                <div class="service-card" id="service-bin">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+                    </div>
+                    <h3>Bin Cleaning</h3>
+                    <p>Clean and disinfect your wheelie bins to eliminate odours and bacteria. <strong>From just £3 per bin.</strong></p>
+                </div>
+
+                <div class="service-card" id="service-gutter">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Gutter Cleaning</h3>
+                    <p>Clearing blocked gutters to prevent water damage and keep your home properly protected year-round.</p>
+                </div>
+
+                <div class="service-card" id="service-grass">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 2 2 2c0 5 5 10 10 10zM12 12c0-5 5-10 10-10-2 5-5 8-10 10z"/></svg>
+                    </div>
+                    <h3>Grass Cutting</h3>
+                    <p>Regular or one-off mowing to keep your lawn neat and tidy throughout the growing season.</p>
+                </div>
+
+                <div class="service-card" id="service-rubbish">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Rubbish Removals</h3>
+                    <p>Household and garden waste cleared quickly and responsibly so you don't have to worry about disposal.</p>
+                </div>
+
+                <div class="service-card" id="service-garden">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Garden Maintenance</h3>
+                    <p>Tidying, weeding, pruning, and general garden care to keep your outdoor space looking its best.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header" style="color:#fff;">
+                <h2 class="section-title" style="color:#fff;">Honest, Transparent Pricing</h2>
+                <p class="section-sub" style="color:rgba(255,255,255,.65);">No hidden fees. No surprises. Just great value cleaning and maintenance.</p>
+            </div>
+            <div class="pricing-grid">
+
+                <div class="price-card" id="price-bin">
+                    <div class="price-label">Bin Cleaning</div>
+                    <div class="price-amount">£3</div>
+                    <div class="price-desc">per wheelie bin — clean &amp; disinfected</div>
+                    <div class="price-highlight">✓ Includes odour treatment</div>
+                </div>
+
+                <div class="price-card" id="price-windows">
+                    <div class="price-label">Window &amp; Frames</div>
+                    <div class="price-amount">£10</div>
+                    <div class="price-desc">complete window clean including frames</div>
+                    <div class="price-highlight">✓ Streak-free finish</div>
+                </div>
+
+                <div class="price-card" id="price-quote">
+                    <div class="price-label">Everything Else</div>
+                    <div class="price-amount">Free</div>
+                    <div class="price-desc">quote for all other services</div>
+                    <div class="price-highlight">✓ Will beat any price</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="section section-alt" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose DB's?</h2>
+                <p class="section-sub">We're local, reliable, and genuinely passionate about the work we do.</p>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <div class="reason-num">01</div>
+                    <h3>Locally Based</h3>
+                    <p>Based right here in Bradford — fast response times and a service you can rely on.</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-num">02</div>
+                    <h3>Friendly Team</h3>
+                    <p>We're approachable, professional, and happy to answer any questions you have.</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-num">03</div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Found a cheaper quote? We'll beat it. Simple as that.</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-num">04</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>One-off jobs or regular maintenance visits — we work around you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band" id="contact">
+        <div class="container">
+            <h2>Ready for a Cleaner Property?</h2>
+            <p>Get in touch today for a free, no-obligation quote. We're friendly, affordable, and always happy to help.</p>
+            <span class="cta-phone-big">
+                <a href="tel:07851542614" id="cta-phone-link">📞 07851 542614</a>
+            </span>
+            <a href="tel:07851542614" class="btn btn-primary" id="cta-call-btn" style="font-size:1rem;padding:1rem 2.5rem;">
+                Call Us Now — It's Free
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <strong style="color:rgba(255,255,255,.85);">DB's Exterior Cleans &amp; Garden Maintenance</strong><br>
+                    Bradford &amp; surrounding areas
+                </div>
+                <div>
+                    <a href="tel:07851542614" id="footer-phone-link">07851 542614</a>
+                    &nbsp;·&nbsp;
+                    <a href="../index.html" id="footer-hub-link">← Back to Web Demos Hub</a>
+                </div>
+                <div>&copy; 2026 DB's Exterior Cleans. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
